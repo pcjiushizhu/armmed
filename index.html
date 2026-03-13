@@ -4,8 +4,431 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArmMed - 专业医疗器械研发制造商</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta name="description" content="ArmMed是专业的医疗器械研发制造商，提供超声类仪器、膀胱超声扫描仪、中耳功能测试、OCT眼科影像和外骨骼机器人等产品。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 关键CSS内联 */
+        :root {
+            --primary: #1E40AF;
+            --secondary: #3B82F6;
+            --accent: #60A5FA;
+            --dark: #1E293B;
+            --light: #F8FAFC;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            z-index: 50;
+            padding: 0.75rem 0;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .nav-links {
+            display: none;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        .nav-toggle {
+            font-size: 1.5rem;
+            color: var(--dark);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        @media (min-width: 768px) {
+            .nav-toggle {
+                display: none;
+            }
+        }
+        .section {
+            padding: 4rem 0;
+        }
+        @media (min-width: 768px) {
+            .section {
+                padding: 6rem 0;
+            }
+        }
+        .h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: var(--secondary);
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .card:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .card-img {
+            width: 100%;
+            height: 16rem;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 1.5rem;
+        }
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .card-text {
+            color: #64748b;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .grid-cols-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .grid-cols-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .flex {
+            display: flex;
+        }
+        .flex-col {
+            flex-direction: column;
+        }
+        .items-center {
+            align-items: center;
+        }
+        .justify-center {
+            justify-content: center;
+        }
+        .justify-between {
+            justify-content: space-between;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+        .mb-8 {
+            margin-bottom: 2rem;
+        }
+        .mt-4 {
+            margin-top: 1rem;
+        }
+        .mt-8 {
+            margin-top: 2rem;
+        }
+        .p-4 {
+            padding: 1rem;
+        }
+        .p-8 {
+            padding: 2rem;
+        }
+        .bg-gray-50 {
+            background-color: #f8fafc;
+        }
+        .bg-dark {
+            background-color: var(--dark);
+            color: white;
+        }
+        .text-white {
+            color: white;
+        }
+        .text-gray-400 {
+            color: #94a3b8;
+        }
+        .list-disc {
+            list-style-type: disc;
+        }
+        .list-inside {
+            list-style-position: inside;
+        }
+        .space-y-2 > * + * {
+            margin-top: 0.5rem;
+        }
+        .space-y-4 > * + * {
+            margin-top: 1rem;
+        }
+        .space-x-4 {
+            gap: 1rem;
+        }
+        .w-full {
+            width: 100%;
+        }
+        .h-64 {
+            height: 16rem;
+        }
+        .object-cover {
+            object-fit: cover;
+        }
+        .rounded-xl {
+            border-radius: 0.75rem;
+        }
+        .shadow-md {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .relative {
+            position: relative;
+        }
+        .overflow-hidden {
+            overflow: hidden;
+        }
+        .pt-24 {
+            padding-top: 6rem;
+        }
+        @media (min-width: 768px) {
+            .pt-32 {
+                padding-top: 8rem;
+            }
+        }
+        .pb-16 {
+            padding-bottom: 4rem;
+        }
+        @media (min-width: 768px) {
+            .pb-24 {
+                padding-bottom: 6rem;
+            }
+        }
+        .max-w-3xl {
+            max-width: 48rem;
+        }
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .py-3 {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+        .py-12 {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+        .border-t {
+            border-top: 1px solid #334155;
+        }
+        .mt-8 {
+            margin-top: 2rem;
+        }
+        .pt-8 {
+            padding-top: 2rem;
+        }
+        /* 轮播样式 */
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+            flex-shrink: 0;
+            width: 100%;
+        }
+        @media (min-width: 768px) {
+            .carousel-item {
+                width: 50%;
+            }
+        }
+        @media (min-width: 1024px) {
+            .carousel-item {
+                width: 33.333%;
+            }
+        }
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .carousel-control:hover {
+            background-color: white;
+        }
+        .carousel-control-prev {
+            left: 0.5rem;
+        }
+        .carousel-control-next {
+            right: 0.5rem;
+        }
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+        .carousel-indicator {
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+            background-color: #e2e8f0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .carousel-indicator.active {
+            background-color: var(--primary);
+        }
+        /* 表单样式 */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #334155;
+        }
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+        }
+        .form-input:focus {
+            outline: none;
+            ring: 2px;
+            ring-color: var(--primary);
+        }
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 10rem;
+        }
+        .form-textarea:focus {
+            outline: none;
+            ring: 2px;
+            ring-color: var(--primary);
+        }
+        /* 响应式调整 */
+        @media (max-width: 767px) {
+            .h2 {
+                font-size: 1.75rem;
+            }
+            .h3 {
+                font-size: 1.25rem;
+            }
+            .card-img {
+                height: 12rem;
+            }
+        }
+        /* 图片懒加载 */
+        .lazy-image {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .lazy-image.loaded {
+            opacity: 1;
+        }
+        /* 加载动画 */
+        .loader {
+            width: 100%;
+            height: 16rem;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+    </style>
+    <!-- 延迟加载Tailwind和Font Awesome -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" defer>
     <script>
         tailwind.config = {
             theme: {
@@ -24,137 +447,122 @@
             }
         }
     </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-            .scroll-smooth {
-                scroll-behavior: smooth;
-            }
-            .text-shadow {
-                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            }
-            .transition-transform {
-                transition-property: transform;
-                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-                transition-duration: 300ms;
-            }
-        }
-    </style>
 </head>
-<body class="bg-light text-dark font-sans">
+<body>
     <!-- 导航栏 -->
-    <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm shadow-sm z-50">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i class="fa fa-heartbeat text-primary text-2xl"></i>
-                <span class="text-2xl font-bold text-primary">ArmMed</span>
+    <nav class="nav">
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <i class="fa fa-heartbeat" style="color: var(--primary); font-size: 1.5rem;"></i>
+                <span style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">ArmMed</span>
             </div>
-            <div class="hidden md:flex space-x-8">
-                <a href="#home" class="font-medium hover:text-primary transition-colors">首页</a>
-                <a href="#products" class="font-medium hover:text-primary transition-colors">产品中心</a>
-                <a href="#about" class="font-medium hover:text-primary transition-colors">关于我们</a>
-                <a href="#contact" class="font-medium hover:text-primary transition-colors">联系我们</a>
+            <div class="nav-links">
+                <a href="#home" class="nav-link">首页</a>
+                <a href="#products" class="nav-link">产品中心</a>
+                <a href="#about" class="nav-link">关于我们</a>
+                <a href="#contact" class="nav-link">联系我们</a>
             </div>
-            <button class="md:hidden text-dark text-xl">
+            <button class="nav-toggle">
                 <i class="fa fa-bars"></i>
             </button>
         </div>
     </nav>
 
     <!-- 首页轮播 -->
-    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-        <div class="container mx-auto px-4">
+    <section id="home" class="section pt-24 pb-16 overflow-hidden">
+        <div class="container">
             <div class="relative">
-                <div id="carousel" class="flex transition-transform duration-500 ease-in-out" style="transform: translateX(0);">
+                <div id="carousel" class="carousel">
                     <!-- 轮播项 1 -->
-                    <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-4">
-                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=high%20tech%20ultrasound%20bladder%20scanner%20medical%20device%20in%20hospital%20setting&image_size=landscape_16_9" alt="膀胱超声扫描仪" class="w-full h-64 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 text-primary">膀胱超声扫描仪</h3>
-                                <p class="text-gray-600 mb-4">高精度超声技术，非侵入式检测膀胱容量，为临床诊断提供准确数据支持。</p>
-                                <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition-colors">了解更多</button>
+                    <div class="carousel-item p-4">
+                        <div class="card">
+                            <div class="loader"></div>
+                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=high%20tech%20ultrasound%20bladder%20scanner%20medical%20device%20in%20hospital%20setting&image_size=landscape_16_9" alt="膀胱超声扫描仪" class="card-img lazy-image" loading="lazy">
+                            <div class="card-content">
+                                <h3 class="card-title">膀胱超声扫描仪</h3>
+                                <p class="card-text">高精度超声技术，非侵入式检测膀胱容量，为临床诊断提供准确数据支持。</p>
+                                <a href="#" class="btn">了解更多</a>
                             </div>
                         </div>
                     </div>
                     <!-- 轮播项 2 -->
-                    <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-4">
-                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=high%20tech%20ear%20function%20testing%20device%20audiology%20medical%20equipment&image_size=landscape_16_9" alt="中耳功能测试" class="w-full h-64 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 text-primary">中耳功能测试</h3>
-                                <p class="text-gray-600 mb-4">先进的声导抗技术，精准评估中耳功能，为听力障碍诊断提供科学依据。</p>
-                                <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition-colors">了解更多</button>
+                    <div class="carousel-item p-4">
+                        <div class="card">
+                            <div class="loader"></div>
+                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=high%20tech%20ear%20function%20testing%20device%20audiology%20medical%20equipment&image_size=landscape_16_9" alt="中耳功能测试" class="card-img lazy-image" loading="lazy">
+                            <div class="card-content">
+                                <h3 class="card-title">中耳功能测试</h3>
+                                <p class="card-text">先进的声导抗技术，精准评估中耳功能，为听力障碍诊断提供科学依据。</p>
+                                <a href="#" class="btn">了解更多</a>
                             </div>
                         </div>
                     </div>
                     <!-- 轮播项 3 -->
-                    <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-4">
-                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=high%20tech%20OCT%20eye%20imaging%20device%20ophthalmology%20medical%20equipment&image_size=landscape_16_9" alt="OCT眼科影像" class="w-full h-64 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 text-primary">OCT眼科影像</h3>
-                                <p class="text-gray-600 mb-4">光学相干断层扫描技术，高分辨率眼部成像，助力眼科疾病早期诊断。</p>
-                                <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition-colors">了解更多</button>
+                    <div class="carousel-item p-4">
+                        <div class="card">
+                            <div class="loader"></div>
+                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=high%20tech%20OCT%20eye%20imaging%20device%20ophthalmology%20medical%20equipment&image_size=landscape_16_9" alt="OCT眼科影像" class="card-img lazy-image" loading="lazy">
+                            <div class="card-content">
+                                <h3 class="card-title">OCT眼科影像</h3>
+                                <p class="card-text">光学相干断层扫描技术，高分辨率眼部成像，助力眼科疾病早期诊断。</p>
+                                <a href="#" class="btn">了解更多</a>
                             </div>
                         </div>
                     </div>
                     <!-- 轮播项 4 -->
-                    <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-4">
-                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=high%20tech%20exoskeleton%20robot%20rehabilitation%20medical%20device&image_size=landscape_16_9" alt="外骨骼机器人" class="w-full h-64 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 text-primary">外骨骼机器人</h3>
-                                <p class="text-gray-600 mb-4">先进的康复与动力外骨骼技术，帮助患者恢复运动功能，提升生活质量。</p>
-                                <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition-colors">了解更多</button>
+                    <div class="carousel-item p-4">
+                        <div class="card">
+                            <div class="loader"></div>
+                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=high%20tech%20exoskeleton%20robot%20rehabilitation%20medical%20device&image_size=landscape_16_9" alt="外骨骼机器人" class="card-img lazy-image" loading="lazy">
+                            <div class="card-content">
+                                <h3 class="card-title">外骨骼机器人</h3>
+                                <p class="card-text">先进的康复与动力外骨骼技术，帮助患者恢复运动功能，提升生活质量。</p>
+                                <a href="#" class="btn">了解更多</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- 轮播控制按钮 -->
-                <button id="prevBtn" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/80 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-white transition-colors">
-                    <i class="fa fa-chevron-left text-primary"></i>
+                <button id="prevBtn" class="carousel-control carousel-control-prev">
+                    <i class="fa fa-chevron-left" style="color: var(--primary);"></i>
                 </button>
-                <button id="nextBtn" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/80 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-white transition-colors">
-                    <i class="fa fa-chevron-right text-primary"></i>
+                <button id="nextBtn" class="carousel-control carousel-control-next">
+                    <i class="fa fa-chevron-right" style="color: var(--primary);"></i>
                 </button>
                 <!-- 轮播指示器 -->
-                <div class="flex justify-center mt-8 space-x-2">
-                    <button class="w-3 h-3 rounded-full bg-primary"></button>
-                    <button class="w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition-colors"></button>
-                    <button class="w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition-colors"></button>
-                    <button class="w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition-colors"></button>
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 公司简介 -->
-    <section id="about" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4 text-primary">关于 ArmMed</h2>
-                <p class="text-gray-600">ArmMed 是一家专注于医疗器械研发与制造的高科技公司，致力于为全球医疗行业提供创新、可靠的医疗设备解决方案。</p>
+    <section id="about" class="section bg-gray-50">
+        <div class="container">
+            <div class="max-w-3xl mx-auto text-center mb-8">
+                <h2 class="h2">关于 ArmMed</h2>
+                <p class="p">ArmMed 是一家专注于医疗器械研发与制造的高科技公司，致力于为全球医疗行业提供创新、可靠的医疗设备解决方案。</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-md">
-                    <h3 class="text-xl font-bold mb-4 text-primary">我们的使命</h3>
-                    <p class="text-gray-600 mb-4">通过创新技术和优质产品，提升医疗诊断与治疗水平，改善患者生活质量，为全球 healthcare 事业做出贡献。</p>
-                    <h3 class="text-xl font-bold mb-4 text-primary">核心业务</h3>
+                <div class="card p-8">
+                    <h3 class="h3">我们的使命</h3>
+                    <p class="p mb-4">通过创新技术和优质产品，提升医疗诊断与治疗水平，改善患者生活质量，为全球 healthcare 事业做出贡献。</p>
+                    <h3 class="h3">核心业务</h3>
                     <ul class="list-disc list-inside text-gray-600 space-y-2">
                         <li>超声类仪器研发与制造</li>
-                        <li>膀胱超声扫描仪</li>
                         <li>中耳功能测试（声导抗）</li>
                         <li>OCT眼科影像（光学相干断层扫描）</li>
                         <li>外骨骼机器人（康复与动力）</li>
                     </ul>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-md">
-                    <h3 class="text-xl font-bold mb-4 text-primary">全球市场</h3>
-                    <p class="text-gray-600 mb-4">我们的产品主要面向国际市场，已远销欧洲、北美、亚太等多个国家和地区，受到全球客户的信赖与好评。</p>
-                    <h3 class="text-xl font-bold mb-4 text-primary">技术优势</h3>
+                <div class="card p-8">
+                    <h3 class="h3">全球市场</h3>
+                    <p class="p mb-4">我们的产品主要面向国际市场，已远销欧洲、北美、亚太等多个国家和地区，受到全球客户的信赖与好评。</p>
+                    <h3 class="h3">技术优势</h3>
                     <ul class="list-disc list-inside text-gray-600 space-y-2">
                         <li>自主研发核心技术</li>
                         <li>严格的质量控制体系</li>
@@ -168,65 +576,71 @@
     </section>
 
     <!-- 产品中心 -->
-    <section id="products" class="py-16">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4 text-primary">产品中心</h2>
-                <p class="text-gray-600">我们提供多种高品质医疗器械，满足不同医疗场景的需求。</p>
+    <section id="products" class="section">
+        <div class="container">
+            <div class="max-w-3xl mx-auto text-center mb-8">
+                <h2 class="h2">产品中心</h2>
+                <p class="p">我们提供多种高品质医疗器械，满足不同医疗场景的需求。</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- 产品 1 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20ultrasound%20bladder%20scanner%20medical%20device%20with%20screen%20display&image_size=square" alt="膀胱超声扫描仪" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-primary">膀胱超声扫描仪</h3>
-                        <p class="text-gray-600 mb-4">非侵入式检测膀胱容量，高精度超声成像，操作简便，适用于多种临床场景。</p>
-                        <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition-colors">产品详情</button>
+                <div class="card">
+                    <div class="loader"></div>
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20ultrasound%20bladder%20scanner%20medical%20device%20with%20screen%20display&image_size=square" alt="膀胱超声扫描仪" class="card-img lazy-image" loading="lazy">
+                    <div class="card-content">
+                        <h3 class="card-title">膀胱超声扫描仪</h3>
+                        <p class="card-text">非侵入式检测膀胱容量，高精度超声成像，操作简便，适用于多种临床场景。</p>
+                        <a href="#" class="btn">产品详情</a>
                     </div>
                 </div>
                 <!-- 产品 2 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=ear%20function%20testing%20device%20audiometer%20medical%20equipment&image_size=square" alt="中耳功能测试" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-primary">中耳功能测试</h3>
-                        <p class="text-gray-600 mb-4">先进的声导抗技术，精准评估中耳功能，为听力障碍诊断提供科学依据。</p>
-                        <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition-colors">产品详情</button>
+                <div class="card">
+                    <div class="loader"></div>
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=ear%20function%20testing%20device%20audiometer%20medical%20equipment&image_size=square" alt="中耳功能测试" class="card-img lazy-image" loading="lazy">
+                    <div class="card-content">
+                        <h3 class="card-title">中耳功能测试</h3>
+                        <p class="card-text">先进的声导抗技术，精准评估中耳功能，为听力障碍诊断提供科学依据。</p>
+                        <a href="#" class="btn">产品详情</a>
                     </div>
                 </div>
                 <!-- 产品 3 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=OCT%20eye%20imaging%20system%20ophthalmology%20medical%20device&image_size=square" alt="OCT眼科影像" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-primary">OCT眼科影像</h3>
-                        <p class="text-gray-600 mb-4">光学相干断层扫描技术，高分辨率眼部成像，助力眼科疾病早期诊断。</p>
-                        <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition-colors">产品详情</button>
+                <div class="card">
+                    <div class="loader"></div>
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=OCT%20eye%20imaging%20system%20ophthalmology%20medical%20device&image_size=square" alt="OCT眼科影像" class="card-img lazy-image" loading="lazy">
+                    <div class="card-content">
+                        <h3 class="card-title">OCT眼科影像</h3>
+                        <p class="card-text">光学相干断层扫描技术，高分辨率眼部成像，助力眼科疾病早期诊断。</p>
+                        <a href="#" class="btn">产品详情</a>
                     </div>
                 </div>
                 <!-- 产品 4 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=rehabilitation%20exoskeleton%20robot%20medical%20device%20for%20walking&image_size=square" alt="外骨骼机器人" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-primary">外骨骼机器人</h3>
-                        <p class="text-gray-600 mb-4">先进的康复与动力外骨骼技术，帮助患者恢复运动功能，提升生活质量。</p>
-                        <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition-colors">产品详情</button>
+                <div class="card">
+                    <div class="loader"></div>
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=rehabilitation%20exoskeleton%20robot%20medical%20device%20for%20walking&image_size=square" alt="外骨骼机器人" class="card-img lazy-image" loading="lazy">
+                    <div class="card-content">
+                        <h3 class="card-title">外骨骼机器人</h3>
+                        <p class="card-text">先进的康复与动力外骨骼技术，帮助患者恢复运动功能，提升生活质量。</p>
+                        <a href="#" class="btn">产品详情</a>
                     </div>
                 </div>
                 <!-- 产品 5 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=portable%20ultrasound%20device%20medical%20imaging%20equipment&image_size=square" alt="便携超声设备" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-primary">便携超声设备</h3>
-                        <p class="text-gray-600 mb-4">轻便易携，高清成像，适用于床旁检查、急诊和野外医疗等场景。</p>
-                        <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition-colors">产品详情</button>
+                <div class="card">
+                    <div class="loader"></div>
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=portable%20ultrasound%20device%20medical%20imaging%20equipment&image_size=square" alt="便携超声设备" class="card-img lazy-image" loading="lazy">
+                    <div class="card-content">
+                        <h3 class="card-title">便携超声设备</h3>
+                        <p class="card-text">轻便易携，高清成像，适用于床旁检查、急诊和野外医疗等场景。</p>
+                        <a href="#" class="btn">产品详情</a>
                     </div>
                 </div>
                 <!-- 产品 6 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=medical%20imaging%20workstation%20software%20system&image_size=square" alt="医疗影像工作站" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-primary">医疗影像工作站</h3>
-                        <p class="text-gray-600 mb-4">专业的医疗影像处理软件，支持多种格式，提供丰富的分析工具。</p>
-                        <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition-colors">产品详情</button>
+                <div class="card">
+                    <div class="loader"></div>
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=medical%20imaging%20workstation%20software%20system&image_size=square" alt="医疗影像工作站" class="card-img lazy-image" loading="lazy">
+                    <div class="card-content">
+                        <h3 class="card-title">医疗影像工作站</h3>
+                        <p class="card-text">专业的医疗影像处理软件，支持多种格式，提供丰富的分析工具。</p>
+                        <a href="#" class="btn">产品详情</a>
                     </div>
                 </div>
             </div>
@@ -234,80 +648,80 @@
     </section>
 
     <!-- 联系我们 -->
-    <section id="contact" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4 text-primary">联系我们</h2>
-                <p class="text-gray-600">如果您对我们的产品感兴趣，或者有任何问题，欢迎随时联系我们。</p>
+    <section id="contact" class="section bg-gray-50">
+        <div class="container">
+            <div class="max-w-3xl mx-auto text-center mb-8">
+                <h2 class="h2">联系我们</h2>
+                <p class="p">如果您对我们的产品感兴趣，或者有任何问题，欢迎随时联系我们。</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-md">
-                    <h3 class="text-xl font-bold mb-4 text-primary">联系方式</h3>
+                <div class="card p-8">
+                    <h3 class="h3">联系方式</h3>
                     <div class="space-y-4">
                         <div class="flex items-start">
-                            <i class="fa fa-map-marker text-primary text-xl mt-1 mr-4"></i>
+                            <i class="fa fa-map-marker" style="color: var(--primary); font-size: 1.5rem; margin-top: 0.25rem; margin-right: 1rem;"></i>
                             <div>
-                                <h4 class="font-medium">公司地址</h4>
+                                <h4 style="font-weight: 500;">公司地址</h4>
                                 <p class="text-gray-600">中国上海市浦东新区张江高科技园区</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <i class="fa fa-phone text-primary text-xl mt-1 mr-4"></i>
+                            <i class="fa fa-phone" style="color: var(--primary); font-size: 1.5rem; margin-top: 0.25rem; margin-right: 1rem;"></i>
                             <div>
-                                <h4 class="font-medium">联系电话</h4>
+                                <h4 style="font-weight: 500;">联系电话</h4>
                                 <p class="text-gray-600">+86 21 1234 5678</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <i class="fa fa-envelope text-primary text-xl mt-1 mr-4"></i>
+                            <i class="fa fa-envelope" style="color: var(--primary); font-size: 1.5rem; margin-top: 0.25rem; margin-right: 1rem;"></i>
                             <div>
-                                <h4 class="font-medium">电子邮箱</h4>
+                                <h4 style="font-weight: 500;">电子邮箱</h4>
                                 <p class="text-gray-600">info@armed.com</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <i class="fa fa-globe text-primary text-xl mt-1 mr-4"></i>
+                            <i class="fa fa-globe" style="color: var(--primary); font-size: 1.5rem; margin-top: 0.25rem; margin-right: 1rem;"></i>
                             <div>
-                                <h4 class="font-medium">官方网站</h4>
+                                <h4 style="font-weight: 500;">官方网站</h4>
                                 <p class="text-gray-600">www.armed.com</p>
                             </div>
                         </div>
                     </div>
                     <div class="mt-8 flex space-x-4">
-                        <a href="#" class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                        <a href="#" style="background-color: var(--primary); color: white; width: 2.5rem; height: 2.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s ease;">
                             <i class="fa fa-facebook"></i>
                         </a>
-                        <a href="#" class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                        <a href="#" style="background-color: var(--primary); color: white; width: 2.5rem; height: 2.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s ease;">
                             <i class="fa fa-twitter"></i>
                         </a>
-                        <a href="#" class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                        <a href="#" style="background-color: var(--primary); color: white; width: 2.5rem; height: 2.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s ease;">
                             <i class="fa fa-linkedin"></i>
                         </a>
-                        <a href="#" class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                        <a href="#" style="background-color: var(--primary); color: white; width: 2.5rem; height: 2.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s ease;">
                             <i class="fa fa-instagram"></i>
                         </a>
                     </div>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-md">
-                    <h3 class="text-xl font-bold mb-4 text-primary">发送消息</h3>
+                <div class="card p-8">
+                    <h3 class="h3">发送消息</h3>
                     <form class="space-y-4">
-                        <div>
-                            <label for="name" class="block text-gray-700 mb-2">姓名</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        <div class="form-group">
+                            <label for="name" class="form-label">姓名</label>
+                            <input type="text" id="name" class="form-input">
                         </div>
-                        <div>
-                            <label for="email" class="block text-gray-700 mb-2">电子邮箱</label>
-                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        <div class="form-group">
+                            <label for="email" class="form-label">电子邮箱</label>
+                            <input type="email" id="email" class="form-input">
                         </div>
-                        <div>
-                            <label for="subject" class="block text-gray-700 mb-2">主题</label>
-                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        <div class="form-group">
+                            <label for="subject" class="form-label">主题</label>
+                            <input type="text" id="subject" class="form-input">
                         </div>
-                        <div>
-                            <label for="message" class="block text-gray-700 mb-2">消息</label>
-                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                        <div class="form-group">
+                            <label for="message" class="form-label">消息</label>
+                            <textarea id="message" class="form-textarea"></textarea>
                         </div>
-                        <button type="submit" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary transition-colors w-full">发送消息</button>
+                        <button type="submit" class="btn w-full">发送消息</button>
                     </form>
                 </div>
             </div>
@@ -316,60 +730,60 @@
 
     <!-- 页脚 -->
     <footer class="bg-dark text-white py-12">
-        <div class="container mx-auto px-4">
+        <div class="container">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
-                        <i class="fa fa-heartbeat text-accent text-2xl"></i>
-                        <span class="text-2xl font-bold text-accent">ArmMed</span>
+                        <i class="fa fa-heartbeat" style="color: var(--accent); font-size: 1.5rem;"></i>
+                        <span style="font-size: 1.5rem; font-weight: bold; color: var(--accent);">ArmMed</span>
                     </div>
                     <p class="text-gray-400 mb-4">专业的嵌入式医疗器械研发制造商，为全球医疗行业提供创新解决方案。</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-accent transition-colors">
+                        <a href="#" style="color: #94a3b8; transition: color 0.3s ease;">
                             <i class="fa fa-facebook"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-accent transition-colors">
+                        <a href="#" style="color: #94a3b8; transition: color 0.3s ease;">
                             <i class="fa fa-twitter"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-accent transition-colors">
+                        <a href="#" style="color: #94a3b8; transition: color 0.3s ease;">
                             <i class="fa fa-linkedin"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-accent transition-colors">
+                        <a href="#" style="color: #94a3b8; transition: color 0.3s ease;">
                             <i class="fa fa-instagram"></i>
                         </a>
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-lg font-bold mb-4 text-accent">快速链接</h4>
+                    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent);">快速链接</h4>
                     <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">产品中心</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">关于我们</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+                        <li><a href="#home" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">首页</a></li>
+                        <li><a href="#products" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">产品中心</a></li>
+                        <li><a href="#about" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">关于我们</a></li>
+                        <li><a href="#contact" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">联系我们</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-lg font-bold mb-4 text-accent">产品系列</h4>
+                    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent);">产品系列</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">膀胱超声扫描仪</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">中耳功能测试</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">OCT眼科影像</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">外骨骼机器人</a></li>
+                        <li><a href="#" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">膀胱超声扫描仪</a></li>
+                        <li><a href="#" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">中耳功能测试</a></li>
+                        <li><a href="#" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">OCT眼科影像</a></li>
+                        <li><a href="#" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">外骨骼机器人</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-lg font-bold mb-4 text-accent">联系我们</h4>
+                    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent);">联系我们</h4>
                     <ul class="space-y-2">
                         <li class="flex items-center">
-                            <i class="fa fa-map-marker mr-2 text-accent"></i>
+                            <i class="fa fa-map-marker" style="margin-right: 0.5rem; color: var(--accent);"></i>
                             <span class="text-gray-400">中国上海市浦东新区张江高科技园区</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fa fa-phone mr-2 text-accent"></i>
+                            <i class="fa fa-phone" style="margin-right: 0.5rem; color: var(--accent);"></i>
                             <span class="text-gray-400">+86 21 1234 5678</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fa fa-envelope mr-2 text-accent"></i>
+                            <i class="fa fa-envelope" style="margin-right: 0.5rem; color: var(--accent);"></i>
                             <span class="text-gray-400">info@armed.com</span>
                         </li>
                     </ul>
@@ -383,6 +797,43 @@
 
     <!-- JavaScript -->
     <script>
+        // 图片懒加载
+        document.addEventListener('DOMContentLoaded', function() {
+            const lazyImages = document.querySelectorAll('.lazy-image');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            const image = entry.target;
+                            image.src = image.dataset.src || image.src;
+                            image.classList.add('loaded');
+                            // 移除加载动画
+                            const loader = image.previousElementSibling;
+                            if (loader && loader.classList.contains('loader')) {
+                                loader.remove();
+                            }
+                            imageObserver.unobserve(image);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(function(image) {
+                    imageObserver.observe(image);
+                });
+            } else {
+                // 降级方案
+                lazyImages.forEach(function(image) {
+                    image.src = image.dataset.src || image.src;
+                    image.classList.add('loaded');
+                    const loader = image.previousElementSibling;
+                    if (loader && loader.classList.contains('loader')) {
+                        loader.remove();
+                    }
+                });
+            }
+        });
+        
         // 轮播功能
         document.addEventListener('DOMContentLoaded', function() {
             const carousel = document.getElementById('carousel');
@@ -390,20 +841,18 @@
             const nextBtn = document.getElementById('nextBtn');
             const slides = carousel.children;
             let currentIndex = 0;
-            const slideWidth = slides[0].offsetWidth;
             const totalSlides = slides.length;
             
             function updateCarousel() {
+                const slideWidth = slides[0].offsetWidth;
                 carousel.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
                 // 更新指示器
-                const indicators = document.querySelectorAll('.flex.justify-center.mt-8 button');
+                const indicators = document.querySelectorAll('.carousel-indicator');
                 indicators.forEach((indicator, index) => {
                     if (index === currentIndex) {
-                        indicator.classList.remove('bg-gray-300');
-                        indicator.classList.add('bg-primary');
+                        indicator.classList.add('active');
                     } else {
-                        indicator.classList.remove('bg-primary');
-                        indicator.classList.add('bg-gray-300');
+                        indicator.classList.remove('active');
                     }
                 });
             }
@@ -426,9 +875,7 @@
             
             // 响应式调整
             window.addEventListener('resize', function() {
-                // 重新计算幻灯片宽度
-                const newSlideWidth = slides[0].offsetWidth;
-                carousel.style.transform = `translateX(-${currentIndex * newSlideWidth}px)`;
+                updateCarousel();
             });
         });
     </script>
