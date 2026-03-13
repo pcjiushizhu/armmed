@@ -1,2 +1,2 @@
 # armmed
-Armmed.cn公司官网
+Armmed.cn
