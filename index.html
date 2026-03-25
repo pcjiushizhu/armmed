@@ -143,6 +143,52 @@
             object-fit: contain;
             background-color: #f8fafc;
         }
+        
+        /* 图片查看器样式 */
+        .image-viewer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .image-viewer.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .image-viewer-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .image-viewer img {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+        .image-viewer-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .image-viewer-close:hover {
+            color: #f3f4f6;
+        }
+        .image-viewer img {
+            cursor: pointer;
+        }
         .card-content {
             padding: 1.5rem;
         }
@@ -656,18 +702,18 @@
                 <!-- 科技进步奖二等奖 -->
                 <div class="card p-6 text-center">
                     <div class="mb-4">
-                        <img src="images/tech2.jpg" alt="科技进步奖二等奖" class="w-32 h-32 mx-auto object-cover rounded-lg">
+                        <img src="images/tech2.jpg" alt="科技进步奖二等奖" class="card-img w-32 h-32 mx-auto object-cover rounded-lg">
                     </div>
                     <h3 class="h3">科技进步奖二等奖</h3>
-                    <p class="p text-gray-600">便携式超声扫描定位系统的研发与应用，获得国家科技进步二等奖。</p>
+                    <p class="p text-gray-600">便携式超声扫描定位系统的研发与应用，获得天津市科技进步二等奖。</p>
                 </div>
                 <!-- 科技进步奖三等奖 -->
                 <div class="card p-6 text-center">
                     <div class="mb-4">
-                        <img src="images/tech3.jpg" alt="科技进步奖三等奖" class="w-32 h-32 mx-auto object-cover rounded-lg">
+                        <img src="images/tech3.jpg" alt="科技进步奖三等奖" class="card-img w-32 h-32 mx-auto object-cover rounded-lg">
                     </div>
                     <h3 class="h3">科技进步奖三等奖</h3>
-                    <p class="p text-gray-600">320W获国家进步三等奖</p>
+                    <p class="p text-gray-600">320W获天津市进步三等奖</p>
                 </div>
             </div>
         </div>
@@ -951,6 +997,54 @@
             window.addEventListener('resize', function() {
                 updateCarousel();
                 prevTranslate = -currentIndex * slides[0].offsetWidth;
+            });
+        });
+        
+        // 图片查看器功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 创建图片查看器元素
+            const imageViewer = document.createElement('div');
+            imageViewer.className = 'image-viewer';
+            imageViewer.innerHTML = `
+                <div class="image-viewer-content">
+                    <span class="image-viewer-close">&times;</span>
+                    <img src="" alt="">
+                </div>
+            `;
+            document.body.appendChild(imageViewer);
+            
+            const viewerImage = imageViewer.querySelector('img');
+            const closeButton = imageViewer.querySelector('.image-viewer-close');
+            
+            // 为所有卡片图片添加点击事件
+            const cardImages = document.querySelectorAll('.card-img');
+            cardImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    const src = this.src;
+                    viewerImage.src = src;
+                    imageViewer.classList.add('active');
+                });
+            });
+            
+            // 关闭图片查看器
+            function closeViewer() {
+                imageViewer.classList.remove('active');
+            }
+            
+            closeButton.addEventListener('click', closeViewer);
+            
+            // 点击背景关闭
+            imageViewer.addEventListener('click', function(e) {
+                if (e.target === imageViewer) {
+                    closeViewer();
+                }
+            });
+            
+            // 按ESC键关闭
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && imageViewer.classList.contains('active')) {
+                    closeViewer();
+                }
             });
         });
     </script>
