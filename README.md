@@ -1,2 +1,2 @@
 # armmed
-Armmed.cn
+Armmed
