@@ -81,6 +81,18 @@
                 display: none;
             }
         }
+        .nav-links.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            gap: 1rem;
+        }
         /* 头部 */
         .header {
             background-color: var(--primary);
@@ -400,5 +412,25 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // 移动端菜单切换功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            navToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+            
+            // 点击导航链接时关闭菜单
+            const navLinkItems = document.querySelectorAll('.nav-link');
+            navLinkItems.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
