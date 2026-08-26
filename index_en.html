@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>长城医学 - 专业医疗器械研发制造商</title>
-    <meta name="description" content="长城医学科技（天津）有限公司是专业的医疗器械研发制造商，提供超声类仪器、中耳功能测试等产品。">
+    <title>GreatWallMed - Professional Medical Device Manufacturer</title>
+    <meta name="description" content="Great Wall Medical Technology (Tianjin) Co., Ltd. is a professional medical device manufacturer, providing ultrasound instruments, middle ear function testing, and other products.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* 关键CSS内联 */
+        /* Key CSS inline */
         :root {
             --primary: #1E40AF;
             --secondary: #3B82F6;
@@ -149,14 +148,14 @@
             height: 16rem;
             object-fit: cover;
         }
-        /* 轮播图片样式，适应纵向图片 */
+        /* Carousel image styles, adapted for portrait images */
         .carousel .card-img {
             height: 20rem;
             object-fit: contain;
             background-color: #f8fafc;
         }
         
-        /* 图片查看器样式 */
+        /* Image viewer styles */
         .image-viewer {
             position: fixed;
             top: 0;
@@ -358,7 +357,7 @@
         .pt-8 {
             padding-top: 2rem;
         }
-        /* 轮播样式 */
+        /* Carousel styles */
         .carousel {
             display: flex;
             transition: transform 0.5s ease-in-out;
@@ -418,7 +417,7 @@
         .carousel-indicator.active {
             background-color: var(--primary);
         }
-        /* 表单样式 */
+        /* Form styles */
         .form-group {
             margin-bottom: 1rem;
         }
@@ -454,7 +453,7 @@
             ring: 2px;
             ring-color: var(--primary);
         }
-        /* 响应式调整 */
+        /* Responsive adjustments */
         @media (max-width: 767px) {
             .h2 {
                 font-size: 1.75rem;
@@ -466,7 +465,7 @@
                 height: 12rem;
             }
         }
-        /* 图片懒加载 */
+        /* Image lazy loading */
         .lazy-image {
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -474,7 +473,7 @@
         .lazy-image.loaded {
             opacity: 1;
         }
-        /* 加载动画 */
+        /* Loading animation */
         .loader {
             width: 100%;
             height: 16rem;
@@ -491,7 +490,7 @@
             }
         }
     </style>
-    <!-- 延迟加载Tailwind和Font Awesome -->
+    <!-- Deferred loading of Tailwind and Font Awesome -->
     <script src="https://cdn.tailwindcss.com" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" defer>
     <script>
@@ -512,25 +511,25 @@
             }
         }
     </script>
-    <title>长城医学</title>
+    <title>GreatWallMed</title>
 </head>
 <body>
-    <!-- 导航栏 -->
+    <!-- Navigation -->
     <nav class="nav">
         <div class="container nav-container">
             <div class="nav-logo">
                 <i class="fa fa-heartbeat" style="color: var(--primary); font-size: 1.5rem;"></i>
-                <span style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">长城医学科技（天津）有限公司</span>
+                <span style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">GreatWallMed</span>
             </div>
             <div class="nav-links">
-                <a href="#home" class="nav-link">首页</a>
-                <a href="#products" class="nav-link">产品中心</a>
-                <a href="#about" class="nav-link">关于我们</a>
-                <a href="#team" class="nav-link">团队介绍</a>
-                <a href="ceo.html" class="nav-link">CEO简介</a>
-                <a href="#certifications" class="nav-link">荣誉证书</a>
-                <a href="#contact" class="nav-link">联系我们</a>
-                <a href="index_en.html" class="nav-link" style="border: 1px solid var(--primary); padding: 0.25rem 0.75rem; border-radius: 0.25rem; color: var(--primary); font-size: 0.875rem;">EN</a>
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#team" class="nav-link">Team</a>
+                <a href="ceo_en.html" class="nav-link">CEO Profile</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
+                <a href="#contact" class="nav-link">Contact Us</a>
+                <a href="index.html" class="nav-link" style="border: 1px solid var(--primary); padding: 0.25rem 0.75rem; border-radius: 0.25rem; color: var(--primary); font-size: 0.875rem;">中文</a>
             </div>
             <button class="nav-toggle">
                 <i class="fa fa-bars"></i>
@@ -538,44 +537,44 @@
         </div>
     </nav>
 
-    <!-- 首页轮播 -->
+    <!-- Home Carousel -->
     <section id="home" class="section pt-24 pb-16 overflow-hidden">
         <div class="container">
             <div class="relative">
                 <div id="carousel" class="carousel">
-                    <!-- 轮播项 1 -->
+                    <!-- Carousel Item 1 -->
                     <div class="carousel-item p-4">
                         <div class="card">
                             <div class="loader"></div>
-                            <img src="images/bladder2.webp" alt="CC-6000Pro 膀胱超声扫描仪" class="card-img lazy-image" loading="lazy">
+                            <img src="images/bladder2eng.webp" alt="CC-6000Pro Bladder Ultrasound Scanner" class="card-img lazy-image" loading="lazy">
                             <div class="card-content">
-                                <h3 class="card-title">CC-6000Pro 膀胱超声扫描仪</h3>
-                                <p class="card-text">高精度超声成像系统，全自动定位超声探头，适用于多种超声诊断临床场景。</p>
-                                <a href="#" class="btn">了解更多</a>
+                                <h3 class="card-title">CC-6000Pro Bladder Ultrasound Scanner</h3>
+                                <p class="card-text">High-precision ultrasound imaging system with automatic probe positioning, suitable for various clinical ultrasound diagnostics.</p>
+                                <a href="#" class="btn">Learn More</a>
                             </div>
                         </div>
                     </div>
-                    <!-- 轮播项 2 -->
+                    <!-- Carousel Item 2 -->
                     <div class="carousel-item p-4">
                         <div class="card">
                             <div class="loader"></div>
-                            <img src="images/ear1.webp" alt="无创式新生儿/婴儿测听系统" class="card-img lazy-image" loading="lazy">
+                            <img src="images/ear1.webp" alt="Non-invasive Neonatal/Infant Hearing Assessment System" class="card-img lazy-image" loading="lazy">
                             <div class="card-content">
-                                <h3 class="card-title">无创式新生儿/婴儿测听系统</h3>
-                                <p class="card-text">先进的声导抗技术，精准评估中耳功能，为听力障碍诊断提供科学依据。</p>
-                                <a href="#" class="btn">了解更多</a>
+                                <h3 class="card-title">Non-invasive Neonatal/Infant Hearing Assessment System</h3>
+                                <p class="card-text">Advanced acoustic immittance technology for accurate middle ear function assessment, providing scientific basis for hearing impairment diagnosis.</p>
+                                <a href="#" class="btn">Learn More</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- 轮播控制按钮 -->
+                <!-- Carousel Control Buttons -->
                 <button id="prevBtn" class="carousel-control carousel-control-prev">
                     <i class="fa fa-chevron-left" style="color: var(--primary);"></i>
                 </button>
                 <button id="nextBtn" class="carousel-control carousel-control-next">
                     <i class="fa fa-chevron-right" style="color: var(--primary);"></i>
                 </button>
-                <!-- 轮播指示器 -->
+                <!-- Carousel Indicators -->
                 <div class="carousel-indicators">
                     <button class="carousel-indicator active"></button>
                     <button class="carousel-indicator"></button>
@@ -584,95 +583,95 @@
         </div>
     </section>
 
-    <!-- 公司简介 -->
+    <!-- Company Introduction -->
     <section id="about" class="section bg-gray-50">
         <div class="container">
             <div class="max-w-3xl mx-auto text-center mb-8">
-                <h2 class="h2">关于 长城医学</h2>
-                <p class="p">长城医学科技（天津）有限公司成立于2026年3月12日，是一家专注于医疗器械研发与制造的高科技公司，致力于为全球医疗行业提供创新、可靠的医疗设备解决方案。</p>
+                <h2 class="h2">About GreatWallMed</h2>
+                <p class="p">Founded on March 12, 2026, Great Wall Medical Technology (Tianjin) Co., Ltd. is a high-tech company focused on the R&D and manufacturing of medical devices, dedicated to providing innovative and reliable medical equipment solutions for the global healthcare industry.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="card p-8">
-                    <h3 class="h3">我们的使命</h3>
-                    <p class="p mb-4">通过创新技术和优质产品，提升医疗诊断与治疗水平，改善患者生活质量，为全球 healthcare 事业做出贡献。</p>
-                    <h3 class="h3">核心业务</h3>
+                    <h3 class="h3">Our Mission</h3>
+                    <p class="p mb-4">Through innovative technology and quality products, we advance medical diagnosis and treatment, improve patient quality of life, and contribute to the global healthcare industry.</p>
+                    <h3 class="h3">Core Business</h3>
                     <ul class="list-disc list-inside text-gray-600 space-y-2">
-                        <li>超声类仪器研发与制造</li>
-                        <li>新生儿中耳功能测试（声导抗）</li>
+                        <li>R&D and manufacturing of ultrasound instruments</li>
+                        <li>Neonatal middle ear function testing (acoustic immittance)</li>
                     </ul>
                 </div>
                 <div class="card p-8">
-                    <h3 class="h3">全球市场</h3>
-                    <p class="p mb-4">我们的产品主要面向国际市场，已远销欧洲、北美、亚太等多个国家和地区，受到全球客户的信赖与好评。</p>
-                    <h3 class="h3">技术优势</h3>
+                    <h3 class="h3">Global Market</h3>
+                    <p class="p mb-4">Our products are primarily targeted at the international market, selling to countries and regions across Europe, North America, and Asia-Pacific, earning trust and acclaim from global customers.</p>
+                    <h3 class="h3">Technical Advantages</h3>
                     <ul class="list-disc list-inside text-gray-600 space-y-2">
-                        <li>自主研发核心技术</li>
-                        <li>严格的质量控制体系</li>
-                        <li>持续的创新能力</li>
-                        <li>专业的技术支持团队</li>
-                        <li>完善的售后服务网络</li>
+                        <li>Independently developed core technology</li>
+                        <li>Strict quality control system</li>
+                        <li>Continuous innovation capability</li>
+                        <li>Professional technical support team</li>
+                        <li>Comprehensive after-sales service network</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 产品中心 -->
+    <!-- Products -->
     <section id="products" class="section">
         <div class="container">
             <div class="max-w-3xl mx-auto text-center mb-8">
-                <h2 class="h2">产品中心</h2>
-                <p class="p">我们提供多种高品质医疗器械，满足不同医疗场景的需求。</p>
+                <h2 class="h2">Products</h2>
+                <p class="p">We offer a wide range of high-quality medical devices to meet various clinical needs.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 产品 1 -->
+                <!-- Product 1 -->
                 <div class="card">
                     <div class="loader"></div>
-                    <img src="images/bladder2.webp" alt="CC-6000Pro 膀胱超声扫描仪" class="card-img lazy-image" loading="lazy">
+                    <img src="images/bladder2eng.png" alt="CC-6000Pro Bladder Ultrasound Scanner" class="card-img lazy-image" loading="lazy">
                     <div class="card-content">
-                        <h3 class="card-title">CC-6000Pro 膀胱超声扫描仪</h3>
-                        <p class="card-text">具备嵌入式操作系统，全新的超声扫描定位算法，便捷式设计，碳纤维防摔探头。</p>
+                        <h3 class="card-title">CC-6000Pro Bladder Ultrasound Scanner</h3>
+                        <p class="card-text">Features an embedded operating system, novel ultrasound scanning positioning algorithm, portable design, and carbon fiber anti-fall probe.</p>
                         <ul class="card-features" style="list-style: none; padding: 0; margin: 0.5rem 0; color: var(--gray); font-size: 0.9rem; line-height: 1.8;">
-                            <li>✓ 测量准确度±7%</li>
-                            <li>✓ 快速，准确，好用</li>
-                            <li>✓ 实时探头姿态导航</li>
-                            <li>✓ 支持DICOM</li>
-                            <li>✓ 支持热敏打印</li>
-                            <li>✓ 支持二维码扫描</li>
-                            <li>✓ 无电池，便携式设计，手机供电，安全可靠，随时随地扫描</li>
+                            <li>✓ Measurement accuracy ±7%</li>
+                            <li>✓ Fast, accurate, easy to use</li>
+                            <li>✓ Real-time probe attitude navigation</li>
+                            <li>✓ DICOM support</li>
+                            <li>✓ Thermal printing support</li>
+                            <li>✓ QR code scanning support</li>
+                            <li>✓ Battery-free, portable design, powered by mobile phone, safe and reliable, scan anywhere, anytime</li>
                         </ul>
-                        <a href="#" class="btn">产品详情</a>
+                        <a href="#" class="btn">Product Details</a>
                     </div>
                 </div>
-                <!-- 产品 2 -->
+                <!-- Product 2 -->
                 <div class="card">
                     <div class="loader"></div>
-                    <img src="images/ear2.webp" alt="CC-5000 中耳功能分析仪" class="card-img lazy-image" loading="lazy">
+                    <img src="images/ear2.webp" alt="CC-5000 Middle Ear Function Analyzer" class="card-img lazy-image" loading="lazy">
                     <div class="card-content">
-                        <h3 class="card-title">CC-5000 中耳功能分析仪</h3>
-                        <p class="card-text">以小见大，用便携科技守护宝宝聆听世界的第一步，便携式操作系统内置打印机，精准的AI智能算法，具备耳声发射功能。</p>
-                        <a href="#" class="btn">产品详情</a>
+                        <h3 class="card-title">CC-5000 Middle Ear Function Analyzer</h3>
+                        <p class="card-text">Small device, big impact. Portable technology safeguards your baby's first step in hearing the world. Built-in printer, precise AI algorithms, and otoacoustic emission capability.</p>
+                        <a href="#" class="btn">Product Details</a>
                     </div>
                 </div>
 
-                <!-- 产品 4 -->
+                <!-- Product 4 -->
                 <div class="card">
                     <div class="loader"></div>
-                    <img src="images/oct2.webp" alt="CC-9000 OCT眼科影像" class="card-img lazy-image" loading="lazy">
+                    <img src="images/oct2.webp" alt="CC-9000 OCT Ophthalmic Imaging" class="card-img lazy-image" loading="lazy">
                     <div class="card-content">
-                        <h3 class="card-title">CC-9000 OCT眼科影像</h3>
-                        <p class="card-text">超广角光学相干断层扫描仪，高分辨率眼部成像，助力眼科疾病早期诊断。</p>
-                        <a href="#" class="btn">产品详情</a>
+                        <h3 class="card-title">CC-9000 OCT Ophthalmic Imaging</h3>
+                        <p class="card-text">Ultra-wide-angle optical coherence tomography scanner with high-resolution ocular imaging, supporting early diagnosis of ophthalmic diseases.</p>
+                        <a href="#" class="btn">Product Details</a>
                     </div>
                 </div>
-                <!-- 产品 4 -->
+                <!-- Product 4 -->
                 <div class="card">
                     <div class="loader"></div>
-                    <img src="images/pacs2.webp" alt="医疗影像工作站" class="card-img lazy-image" loading="lazy">
+                    <img src="images/pacs2.webp" alt="Medical Imaging Workstation" class="card-img lazy-image" loading="lazy">
                     <div class="card-content">
-                        <h3 class="card-title">医疗影像工作站</h3>
-                        <p class="card-text">专业的医疗影像处理软件，支持多种格式，提供丰富的AI分析工具。</p>
-                        <a href="#" class="btn">产品详情</a>
+                        <h3 class="card-title">Medical Imaging Workstation</h3>
+                        <p class="card-text">Professional medical imaging processing software supporting multiple formats, with rich AI analysis tools.</p>
+                        <a href="#" class="btn">Product Details</a>
                     </div>
                 </div>
 
@@ -680,70 +679,70 @@
         </div>
     </section>
 
-    <!-- 科技进步奖 -->
+    <!-- Science & Technology Progress Awards -->
     <section id="certifications" class="section bg-gray-50">
         <div class="container">
             <div class="max-w-3xl mx-auto text-center mb-8">
-                <h2 class="h2">科技进步奖</h2>
-                <p class="p">我们在医疗器械领域的创新成果获得了多项科技进步奖项，彰显了我们的技术实力和行业影响力。</p>
+                <h2 class="h2">Science & Technology Progress Awards</h2>
+                <p class="p">Our innovations in the medical device field have earned multiple Science & Technology Progress Awards, demonstrating our technical strength and industry influence.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- 科技进步奖二等奖 -->
+                <!-- Second Prize of Science & Technology Progress Award -->
                 <div class="card p-6 text-center">
                     <div class="mb-4">
-                        <img src="images/tech2.jpg" alt="科技进步奖二等奖" class="card-img w-32 h-32 mx-auto object-cover rounded-lg">
+                        <img src="images/tech2.jpg" alt="Second Prize of Science & Technology Progress Award" class="card-img w-32 h-32 mx-auto object-cover rounded-lg">
                     </div>
-                    <h3 class="h3">科技进步奖二等奖</h3>
-                    <p class="p text-gray-600">便携式超声扫描定位系统的研发与应用，获得天津市科技进步二等奖。</p>
+                    <h3 class="h3">Second Prize of Science & Technology Progress Award</h3>
+                    <p class="p text-gray-600">The R&D and application of the portable ultrasound scanning and positioning system won the Second Prize of Tianjin Science & Technology Progress Award.</p>
                 </div>
-                <!-- 科技进步奖三等奖 -->
+                <!-- Third Prize of Science & Technology Progress Award -->
                 <div class="card p-6 text-center">
                     <div class="mb-4">
-                        <img src="images/tech3.jpg" alt="科技进步奖三等奖" class="card-img w-32 h-32 mx-auto object-cover rounded-lg">
+                        <img src="images/tech3.jpg" alt="Third Prize of Science & Technology Progress Award" class="card-img w-32 h-32 mx-auto object-cover rounded-lg">
                     </div>
-                    <h3 class="h3">科技进步奖三等奖</h3>
-                    <p class="p text-gray-600">320W获天津市进步三等奖</p>
+                    <h3 class="h3">Third Prize of Science & Technology Progress Award</h3>
+                    <p class="p text-gray-600">320W won the Third Prize of Tianjin Science & Technology Progress Award.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 联系我们 -->
+    <!-- Contact Us -->
     <section id="contact" class="section bg-gray-50">
         <div class="container">
             <div class="max-w-3xl mx-auto text-center mb-8">
-                <h2 class="h2">联系我们</h2>
-                <p class="p">如果您对我们的产品感兴趣，或者有任何问题，欢迎随时联系我们。</p>
+                <h2 class="h2">Contact Us</h2>
+                <p class="p">If you are interested in our products or have any questions, please feel free to contact us at any time.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="card p-8">
-                    <h3 class="h3">联系方式</h3>
+                    <h3 class="h3">Contact Information</h3>
                     <div class="space-y-4">
                         <div class="flex items-start">
                             <i class="fa fa-map-marker" style="color: var(--primary); font-size: 1.5rem; margin-top: 0.25rem; margin-right: 1rem;"></i>
                             <div>
-                                <h4 style="font-weight: 500;">公司地址</h4>
-                                <p class="text-gray-600">中国天津市西青区天开园</p>
+                                <h4 style="font-weight: 500;">Company Address</h4>
+                                <p class="text-gray-600">Tiankai Park, Xiqing District, Tianjin, China</p>
                             </div>
                         </div>
                         <div class="flex items-start">
                             <i class="fa fa-phone" style="color: var(--primary); font-size: 1.5rem; margin-top: 0.25rem; margin-right: 1rem;"></i>
                             <div>
-                                <h4 style="font-weight: 500;">联系电话</h4>
+                                <h4 style="font-weight: 500;">Phone</h4>
                                 <p class="text-gray-600">+86 18322134439</p>
                             </div>
                         </div>
                         <div class="flex items-start">
                             <i class="fa fa-envelope" style="color: var(--primary); font-size: 1.5rem; margin-top: 0.25rem; margin-right: 1rem;"></i>
                             <div>
-                                <h4 style="font-weight: 500;">电子邮箱</h4>
+                                <h4 style="font-weight: 500;">Email</h4>
                                 <p class="text-gray-600"><a href="mailto:574645820@qq.com" style="color: var(--primary); text-decoration: none; transition: color 0.3s ease;">574645820@qq.com</a></p>
                             </div>
                         </div>
                         <div class="flex items-start">
                             <i class="fa fa-globe" style="color: var(--primary); font-size: 1.5rem; margin-top: 0.25rem; margin-right: 1rem;"></i>
                             <div>
-                                <h4 style="font-weight: 500;">官方网站</h4>
+                                <h4 style="font-weight: 500;">Official Website</h4>
                                 <p class="text-gray-600"><a href="https://www.armmed.cn" target="_blank" style="color: var(--primary); text-decoration: none; transition: color 0.3s ease;">www.armmed.cn</a></p>
                             </div>
                         </div>
@@ -764,26 +763,26 @@
                     </div>
                 </div>
                 <div class="card p-8 text-center">
-                    <h3 class="h3">扫码添加微信</h3>
+                    <h3 class="h3">Scan to Add WeChat</h3>
                     <div class="mt-4">
-                        <img src="images/wechat_qrcode.webp" alt="微信二维码" style="width: 200px; height: 200px; margin: 0 auto;">
+                        <img src="images/wechat_qrcode.webp" alt="WeChat QR Code" style="width: 200px; height: 200px; margin: 0 auto;">
                     </div>
-                    <p class="mt-4 text-gray-600">扫码添加我们的微信，获取更多产品信息</p>
+                    <p class="mt-4 text-gray-600">Scan to add our WeChat for more product information</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 页脚 -->
+    <!-- Footer -->
     <footer class="bg-dark text-white py-12">
         <div class="container">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
                         <i class="fa fa-heartbeat" style="color: var(--accent); font-size: 1.5rem;"></i>
-                        <span style="font-size: 1.5rem; font-weight: bold; color: var(--accent);">长城医学</span>
+                        <span style="font-size: 1.5rem; font-weight: bold; color: var(--accent);">GreatWallMed</span>
                     </div>
-                    <p class="text-gray-400 mb-4">长城医学科技（天津）有限公司是专业的医疗器械研发制造商，为全球医疗行业提供创新解决方案。</p>
+                    <p class="text-gray-400 mb-4">Great Wall Medical Technology (Tianjin) Co., Ltd. is a professional medical device manufacturer providing innovative solutions for the global healthcare industry.</p>
                     <div class="flex space-x-4">
                         <a href="#" style="color: #94a3b8; transition: color 0.3s ease;">
                             <i class="fa fa-facebook"></i>
@@ -800,31 +799,31 @@
                     </div>
                 </div>
                 <div>
-                    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent);">快速链接</h4>
+                    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent);">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#home" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">首页</a></li>
-                        <li><a href="#products" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">产品中心</a></li>
-                        <li><a href="#about" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">关于我们</a></li>
-                        <li><a href="#team" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">团队介绍</a></li>
-                        <li><a href="ceo.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">CEO简介</a></li>
-                        <li><a href="#certifications" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">荣誉证书</a></li>
-                        <li><a href="#contact" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">联系我们</a></li>
-                        <li><a href="armmed.apk" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;" download>APP下载</a></li>
+                        <li><a href="#home" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">Home</a></li>
+                        <li><a href="#products" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">Products</a></li>
+                        <li><a href="#about" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">About Us</a></li>
+                        <li><a href="#team" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">Team</a></li>
+                        <li><a href="ceo_en.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">CEO Profile</a></li>
+                        <li><a href="#certifications" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">Certifications</a></li>
+                        <li><a href="#contact" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">Contact Us</a></li>
+                        <li><a href="armmed.apk" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;" download>APP Download</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent);">产品系列</h4>
+                    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent);">Product Series</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">超声扫描仪</a></li>
-                        <li><a href="#" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">中耳功能测试仪</a></li>
+                        <li><a href="#" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">Ultrasound Scanners</a></li>
+                        <li><a href="#" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">Middle Ear Function Testers</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent);">联系我们</h4>
+                    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent);">Contact Us</h4>
                     <ul class="space-y-2">
                         <li class="flex items-center">
                             <i class="fa fa-map-marker" style="margin-right: 0.5rem; color: var(--accent);"></i>
-                            <span class="text-gray-400">中国天津市西青区天开园</span>
+                            <span class="text-gray-400">Tiankai Park, Xiqing District, Tianjin, China</span>
                         </li>
                         <li class="flex items-center">
                             <i class="fa fa-phone" style="margin-right: 0.5rem; color: var(--accent);"></i>
@@ -842,14 +841,14 @@
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-                <p class="text-gray-400">&copy; 2026 长城医学科技（天津）有限公司. 保留所有权利。</p>
+                <p class="text-gray-400">&copy; 2026 Great Wall Medical Technology (Tianjin) Co., Ltd. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
-        // 图片懒加载
+        // Image lazy loading
         document.addEventListener('DOMContentLoaded', function() {
             const lazyImages = document.querySelectorAll('.lazy-image');
             
@@ -860,7 +859,7 @@
                             const image = entry.target;
                             image.src = image.dataset.src || image.src;
                             image.classList.add('loaded');
-                            // 移除加载动画
+                            // Remove loading animation
                             const loader = image.previousElementSibling;
                             if (loader && loader.classList.contains('loader')) {
                                 loader.remove();
@@ -874,7 +873,7 @@
                     imageObserver.observe(image);
                 });
             } else {
-                // 降级方案
+                // Fallback
                 lazyImages.forEach(function(image) {
                     image.src = image.dataset.src || image.src;
                     image.classList.add('loaded');
@@ -886,7 +885,7 @@
             }
         });
         
-        // 轮播功能
+        // Carousel functionality
         document.addEventListener('DOMContentLoaded', function() {
             const carousel = document.getElementById('carousel');
             const prevBtn = document.getElementById('prevBtn');
@@ -902,7 +901,7 @@
             function updateCarousel() {
                 const slideWidth = slides[0].offsetWidth;
                 carousel.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-                // 更新指示器
+                // Update indicators
                 const indicators = document.querySelectorAll('.carousel-indicator');
                 indicators.forEach((indicator, index) => {
                     if (index === currentIndex) {
@@ -925,7 +924,7 @@
                 prevTranslate = -currentIndex * slides[0].offsetWidth;
             });
             
-            // 点击指示器导航
+            // Click indicator to navigate
             const indicators = document.querySelectorAll('.carousel-indicator');
             indicators.forEach((indicator, index) => {
                 indicator.addEventListener('click', function() {
@@ -935,7 +934,7 @@
                 });
             });
             
-            // 手势滑动功能
+            // Gesture swipe functionality
             carousel.addEventListener('mousedown', startDrag);
             carousel.addEventListener('touchstart', startDrag);
             
@@ -968,10 +967,10 @@
                 const diff = currentTranslate - prevTranslate;
                 
                 if (diff > 50) {
-                    // 向右滑动
+                    // Swipe right
                     currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
                 } else if (diff < -50) {
-                    // 向左滑动
+                    // Swipe left
                     currentIndex = (currentIndex + 1) % totalSlides;
                 }
                 
@@ -982,14 +981,14 @@
             
 
             
-            // 响应式调整
+            // Responsive adjustment
             window.addEventListener('resize', function() {
                 updateCarousel();
                 prevTranslate = -currentIndex * slides[0].offsetWidth;
             });
         });
         
-        // 移动端菜单切换功能
+        // Mobile menu toggle
         document.addEventListener('DOMContentLoaded', function() {
             const navToggle = document.querySelector('.nav-toggle');
             const navLinks = document.querySelector('.nav-links');
@@ -998,7 +997,7 @@
                 navLinks.classList.toggle('active');
             });
             
-            // 点击导航链接时关闭菜单
+            // Close menu when clicking navigation links
             const navLinkItems = document.querySelectorAll('.nav-link');
             navLinkItems.forEach(link => {
                 link.addEventListener('click', function() {
@@ -1007,9 +1006,9 @@
             });
         });
         
-        // 图片查看器功能
+        // Image viewer functionality
         document.addEventListener('DOMContentLoaded', function() {
-            // 创建图片查看器元素
+            // Create image viewer element
             const imageViewer = document.createElement('div');
             imageViewer.className = 'image-viewer';
             imageViewer.innerHTML = `
@@ -1023,7 +1022,7 @@
             const viewerImage = imageViewer.querySelector('img');
             const closeButton = imageViewer.querySelector('.image-viewer-close');
             
-            // 为所有卡片图片添加点击事件
+            // Add click event for all card images
             const cardImages = document.querySelectorAll('.card-img');
             cardImages.forEach(img => {
                 img.addEventListener('click', function() {
@@ -1033,21 +1032,21 @@
                 });
             });
             
-            // 关闭图片查看器
+            // Close image viewer
             function closeViewer() {
                 imageViewer.classList.remove('active');
             }
             
             closeButton.addEventListener('click', closeViewer);
             
-            // 点击背景关闭
+            // Click background to close
             imageViewer.addEventListener('click', function(e) {
                 if (e.target === imageViewer) {
                     closeViewer();
                 }
             });
             
-            // 按ESC键关闭
+            // Press ESC key to close
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape' && imageViewer.classList.contains('active')) {
                     closeViewer();
