@@ -168,16 +168,25 @@
         }
         /* CEO Profile Styles */
         .ceo-section {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
+        .ceo-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--primary-light);
+        }
         .ceo-photo {
-            width: 200px;
-            height: 260px;
+            flex-shrink: 0;
+            width: 140px;
+            height: 185px;
             border-radius: 0.5rem;
             overflow: hidden;
-            border: 4px solid var(--primary);
-            margin: 0 auto 2rem;
+            border: 3px solid var(--primary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         .ceo-photo img {
             width: 100%;
@@ -185,17 +194,43 @@
             object-fit: cover;
         }
         .ceo-info {
-            text-align: center;
-            margin-bottom: 2rem;
+            flex: 1;
+            text-align: left;
+            padding-top: 0.5rem;
+            margin-bottom: 0;
         }
         .ceo-name {
-            font-size: 1.75rem;
+            font-size: 2rem;
             font-weight: 700;
             color: var(--dark);
+            margin-bottom: 0.5rem;
         }
         .ceo-title {
+            color: var(--primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        .ceo-brief {
             color: var(--gray);
+            line-height: 1.8;
             margin-top: 0.5rem;
+        }
+        /* Responsive: stack layout on mobile */
+        @media (max-width: 640px) {
+            .ceo-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+            .ceo-photo {
+                width: 120px;
+                height: 160px;
+            }
+            .ceo-name {
+                font-size: 1.6rem;
+            }
         }
         .section {
             margin-bottom: 2rem;
@@ -282,23 +317,20 @@
     <main class="content">
         <div class="container">
             <div class="card ceo-section">
-                <!-- Photo -->
-                <div class="ceo-photo">
-                    <img src="myphoto.jpg" alt="CEO Photo">
-                </div>
-
-                <!-- Basic Info -->
-                <div class="ceo-info">
-                    <h2 class="ceo-name">Chao Pang</h2>
-                    <p class="ceo-title">Founder &amp; CEO</p>
-                </div>
-
-                <!-- Biography -->
-                <div class="section">
-                    <h3 class="section-title">Biography</h3>
-                    <p style="color: var(--gray); line-height: 1.8;">
-                        Chao Pang, male, born in July 1989, holds a Master's degree in Biomedical Engineering. As the founder and CEO of GreatWallMed, he focuses on the R&D and innovation of medical devices, leading the team to develop multiple medical devices with independent intellectual property rights, including ultrasound scanners, middle ear function analyzers, and ophthalmic OCT products.
-                    </p>
+                <!-- Top Header: Photo (left) + Name/Bio (right) -->
+                <div class="ceo-header">
+                    <!-- Photo: top left -->
+                    <div class="ceo-photo">
+                        <img src="myphoto.jpg" alt="CEO Photo">
+                    </div>
+                    <!-- Basic Info + Brief -->
+                    <div class="ceo-info">
+                        <h2 class="ceo-name">Chao Pang</h2>
+                        <p class="ceo-title">Founder &amp; CEO</p>
+                        <p class="ceo-brief">
+                            Chao Pang, male, born in July 1989, holds a Master's degree in Biomedical Engineering. As the founder and CEO of GreatWallMed, he focuses on the R&amp;D and innovation of medical devices, leading the team to develop multiple medical devices with independent intellectual property rights, including ultrasound scanners, middle ear function analyzers, and ophthalmic OCT products.
+                        </p>
+                    </div>
                 </div>
 
                 <!-- Education Background -->
