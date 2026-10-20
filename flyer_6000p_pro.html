@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CC-6000P_PRO 手持式膀胱超声扫描仪 - 宣传彩页</title>
+    <style>
+        /* A4 打印设置 */
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            padding: 0;
+            font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+            color: #1a202c;
+            background: #ffffff;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .page {
+            width: 210mm;
+            height: 297mm;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(160deg, #f0f9ff 0%, #ffffff 55%, #eef8fe 100%);
+        }
+
+        /* 顶部品牌栏 */
+        .header {
+            flex: 0 0 auto;
+            background: linear-gradient(120deg, #0c4a6e 0%, #0891b2 100%);
+            color: #ffffff;
+            padding: 6mm 12mm;
+            position: relative;
+            z-index: 2;
+        }
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2.2mm;
+            background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
+        }
+        .brand-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .brand-left {
+            display: flex;
+            align-items: center;
+            gap: 3.5mm;
+        }
+        .brand-mark {
+            width: 10.5mm;
+            height: 10.5mm;
+            background: #ffffff;
+            border-radius: 2.5mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6.8mm;
+            font-weight: bold;
+            color: #0284c7;
+            flex-shrink: 0;
+        }
+        .brand-name {
+            font-size: 5.2mm;
+            font-weight: bold;
+            line-height: 1.25;
+        }
+        .brand-name-en {
+            font-size: 3mm;
+            font-weight: 400;
+            opacity: 0.92;
+            margin-top: 0.6mm;
+        }
+        .brand-slogan {
+            text-align: right;
+            font-size: 3.1mm;
+            opacity: 0.92;
+            line-height: 1.55;
+        }
+
+        /* 产品标题区 */
+        .title-area {
+            flex: 0 0 auto;
+            text-align: center;
+            padding: 4mm 12mm 2mm;
+            position: relative;
+            z-index: 2;
+        }
+        .model-tag {
+            display: inline-block;
+            background: linear-gradient(120deg, #0891b2, #0c4a6e);
+            color: #ffffff;
+            font-size: 3.9mm;
+            font-weight: bold;
+            padding: 1.1mm 5.5mm;
+            border-radius: 20px;
+            letter-spacing: 1px;
+        }
+        .product-name-cn {
+            font-size: 7.8mm;
+            font-weight: bold;
+            color: #0c4a6e;
+            letter-spacing: 1px;
+            margin-top: 2.2mm;
+        }
+        .product-name-en {
+            font-size: 4.1mm;
+            color: #0891b2;
+            font-weight: 500;
+            margin-top: 1mm;
+            letter-spacing: 0.5px;
+        }
+        .tagline {
+            margin-top: 2mm;
+            font-size: 3.4mm;
+            color: #475569;
+        }
+        .tagline .hl {
+            color: #b45309;
+            font-weight: 700;
+        }
+        .tagline .sep {
+            margin: 0 2mm;
+            color: #cbd5e1;
+        }
+
+        /* 产品展示区 */
+        .hero {
+            flex: 0 0 50mm;
+            display: grid;
+            grid-template-columns: 86mm 1fr;
+            gap: 6mm;
+            padding: 0 12mm 3mm;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-card {
+            position: relative;
+            border-radius: 3mm;
+            overflow: hidden;
+            box-shadow: 0 1.4mm 4mm rgba(12, 74, 110, 0.13);
+        }
+        /* 设备图：白底相乘混合，消除实拍背景，融入渐变底 */
+        .hero-device {
+            background: radial-gradient(circle at 52% 46%, #ffffff 0%, #eaf5fd 62%, #d5ecfa 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-device img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 56%;
+            mix-blend-mode: multiply;
+            filter: contrast(1.05) saturate(1.06) brightness(1.02);
+        }
+        /* 屏幕界面图：深色机身框 */
+        .hero-screen {
+            background: linear-gradient(150deg, #10233c 0%, #0b1a2c 100%);
+            padding: 2.2mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-screen img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 1mm;
+            box-shadow: 0 0 0 0.4mm rgba(255, 255, 255, 0.18);
+        }
+        .hero-badge {
+            position: absolute;
+            left: 2.4mm;
+            bottom: 2.4mm;
+            background: linear-gradient(120deg, #0891b2, #0c4a6e);
+            color: #ffffff;
+            font-size: 2.8mm;
+            font-weight: 600;
+            padding: 1mm 3mm;
+            border-radius: 1.5mm;
+            letter-spacing: 0.2px;
+            box-shadow: 0 0.6mm 1.6mm rgba(12, 74, 110, 0.25);
+        }
+        .hero-screen .hero-badge {
+            background: linear-gradient(120deg, #f59e0b, #d97706);
+        }
+
+        /* 产品特点区 */
+        .features {
+            flex: 1 1 auto;
+            min-height: 0;
+            padding: 0 12mm 3mm;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(4, minmax(0, 1fr));
+            gap: 3mm 5mm;
+            overflow: hidden;
+        }
+        .tile {
+            display: flex;
+            gap: 3mm;
+            background: #ffffff;
+            border: 0.4mm solid #e2e8f0;
+            border-left: 1.2mm solid #0891b2;
+            border-radius: 2.5mm;
+            padding: 2.4mm 3mm;
+            box-shadow: 0 0.5mm 1.8mm rgba(8, 145, 178, 0.06);
+            align-items: center;
+            overflow: hidden;
+        }
+        .tile-num {
+            flex-shrink: 0;
+            width: 7.2mm;
+            height: 7.2mm;
+            border-radius: 50%;
+            background: linear-gradient(120deg, #0891b2, #0c4a6e);
+            color: #ffffff;
+            font-size: 3.1mm;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .tile-body {
+            flex: 1;
+            min-width: 0;
+        }
+        .tile-cn {
+            font-size: 3.7mm;
+            font-weight: 700;
+            color: #0c4a6e;
+            line-height: 1.22;
+        }
+        .tile-en {
+            font-size: 2.7mm;
+            color: #0891b2;
+            font-weight: 600;
+            margin-top: 0.3mm;
+            letter-spacing: 0.2px;
+            line-height: 1.25;
+        }
+        .tile-desc-cn {
+            font-size: 2.75mm;
+            color: #334155;
+            line-height: 1.4;
+            margin-top: 0.9mm;
+        }
+        .tile-desc-en {
+            font-size: 2.4mm;
+            color: #64748b;
+            font-style: italic;
+            line-height: 1.35;
+            margin-top: 0.2mm;
+        }
+
+        /* 底部联系区 */
+        .footer {
+            flex: 0 0 auto;
+            position: relative;
+            background: linear-gradient(120deg, #0c4a6e 0%, #0891b2 100%);
+            color: #ffffff;
+            padding: 6mm 12mm 5mm;
+            z-index: 2;
+        }
+        .footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2.2mm;
+            background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 6mm;
+            margin-top: 1.2mm;
+        }
+        .contact-info {
+            flex: 1;
+        }
+        .contact-title {
+            font-size: 4.2mm;
+            font-weight: bold;
+            margin-bottom: 2.2mm;
+            color: #fbbf24;
+        }
+        .contact-item {
+            display: flex;
+            align-items: baseline;
+            gap: 2.5mm;
+            margin-bottom: 1.5mm;
+            font-size: 3.2mm;
+            line-height: 1.4;
+        }
+        .ci-label {
+            flex-shrink: 0;
+            width: 17mm;
+            font-size: 2.7mm;
+            color: #fbbf24;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+        .contact-text-cn {
+            color: #ffffff;
+            font-weight: 500;
+        }
+        .contact-text-en {
+            color: #cbd5e1;
+            font-size: 2.8mm;
+            margin-left: 1.5mm;
+        }
+        .qr-area {
+            flex: 0 0 34mm;
+            text-align: center;
+            background: #ffffff;
+            padding: 2.4mm;
+            border-radius: 2mm;
+        }
+        .qr-area img {
+            width: 27mm;
+            height: 27mm;
+            object-fit: contain;
+        }
+        .qr-text {
+            font-size: 2.8mm;
+            color: #0c4a6e;
+            font-weight: 600;
+            margin-top: 1mm;
+        }
+        .qr-text-en {
+            font-size: 2.4mm;
+            color: #64748b;
+            margin-top: 0.3mm;
+        }
+
+        /* 打印按钮（屏幕显示，打印时隐藏） */
+        .print-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #0891b2;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 9999;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .print-btn:hover {
+            background: #0c4a6e;
+        }
+        @media print {
+            .print-btn {
+                display: none;
+            }
+            body {
+                background: #ffffff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">打印 / Print</button>
+
+    <div class="page">
+        <!-- 顶部品牌栏 -->
+        <div class="header">
+            <div class="brand-row">
+                <div class="brand-left">
+                    <div class="brand-mark">♥</div>
+                    <div>
+                        <div class="brand-name">长城医学科技（天津）有限公司</div>
+                        <div class="brand-name-en">Great Wall Medical Technology (Tianjin) Co., Ltd.</div>
+                    </div>
+                </div>
+                <div class="brand-slogan">
+                    专业医疗器械研发制造商<br>
+                    Professional Medical Device Manufacturer
+                </div>
+            </div>
+        </div>
+
+        <!-- 产品标题 -->
+        <div class="title-area">
+            <div class="model-tag">CC-6000P_PRO</div>
+            <div class="product-name-cn">手持式膀胱超声扫描仪</div>
+            <div class="product-name-en">Handheld Bladder Ultrasound Scanner</div>
+            <div class="tagline">
+                <span class="hl">快速 · 准确 · 易用</span>
+                <span class="sep">|</span>
+                <span>内置热敏打印 · 随测随打</span>
+            </div>
+        </div>
+
+        <!-- 产品展示 -->
+        <div class="hero">
+            <div class="hero-card hero-device">
+                <img src="images/cc6000p_pro_device.jpg" alt="CC-6000P_PRO 手持式膀胱超声扫描仪">
+                <span class="hero-badge">3.1″ 高清触摸屏 · 便携手持</span>
+            </div>
+            <div class="hero-card hero-screen">
+                <img src="images/cc6000p_pro_ui.png" alt="实时超声图像与识别结果界面">
+                <span class="hero-badge">一键扫描 · 实时显示膀胱容量</span>
+            </div>
+        </div>
+
+        <!-- 产品特点 -->
+        <div class="features">
+            <div class="tile">
+                <div class="tile-num">01</div>
+                <div class="tile-body">
+                    <div class="tile-cn">测量准确度 ±7%</div>
+                    <div class="tile-en">Measurement Accuracy ±7%</div>
+                    <div class="tile-desc-cn">实时探头姿态导航，快速、准确、易用。</div>
+                    <div class="tile-desc-en">Fast, accurate &amp; easy, with probe navigation.</div>
+                </div>
+            </div>
+            <div class="tile">
+                <div class="tile-num">02</div>
+                <div class="tile-body">
+                    <div class="tile-cn">3.1″ 高清触摸屏</div>
+                    <div class="tile-en">3.1″ HD Touchscreen</div>
+                    <div class="tile-desc-cn">IPS 电容触摸屏，实时显示图像与结果。</div>
+                    <div class="tile-desc-en">IPS touchscreen with live image &amp; results.</div>
+                </div>
+            </div>
+            <div class="tile">
+                <div class="tile-num">03</div>
+                <div class="tile-body">
+                    <div class="tile-cn">一键扫描 · 内置扫码枪</div>
+                    <div class="tile-en">One-Tap Scan · Built-in Scanner</div>
+                    <div class="tile-desc-cn">扫码录入患者 ID、姓名，免去繁琐输入。</div>
+                    <div class="tile-desc-en">Scan QR to import patient ID &amp; name.</div>
+                </div>
+            </div>
+            <div class="tile">
+                <div class="tile-num">04</div>
+                <div class="tile-body">
+                    <div class="tile-cn">内置热敏打印机</div>
+                    <div class="tile-en">Built-in Thermal Printer</div>
+                    <div class="tile-desc-cn">一键打印，随测随打，无需外接打印机。</div>
+                    <div class="tile-desc-en">One-tap print on the spot; no external printer.</div>
+                </div>
+            </div>
+            <div class="tile">
+                <div class="tile-num">05</div>
+                <div class="tile-body">
+                    <div class="tile-cn">智能管理 · 数据互联</div>
+                    <div class="tile-en">Smart Management &amp; Connectivity</div>
+                    <div class="tile-desc-cn">尿量曲线打印、支持 DICOM；U 盘模式外设扩展。</div>
+                    <div class="tile-desc-en">Urine-output curves, DICOM; USB host mode.</div>
+                </div>
+            </div>
+            <div class="tile">
+                <div class="tile-num">06</div>
+                <div class="tile-body">
+                    <div class="tile-cn">3350mAh 强劲续航</div>
+                    <div class="tile-en">3350mAh Long Battery Life</div>
+                    <div class="tile-desc-cn">TI 电量管理，2 天一充、3 小时快充。</div>
+                    <div class="tile-desc-en">TI power management; 2-day use, 3-hour charge.</div>
+                </div>
+            </div>
+            <div class="tile">
+                <div class="tile-num">07</div>
+                <div class="tile-body">
+                    <div class="tile-cn">Type-C 充电 · 对外放电</div>
+                    <div class="tile-en">Type-C Charging · Power Bank</div>
+                    <div class="tile-desc-cn">兼容任意充电器与车载充电，可对外放电。</div>
+                    <div class="tile-desc-en">Any &amp; car charger; reverse charging output.</div>
+                </div>
+            </div>
+            <div class="tile">
+                <div class="tile-num">08</div>
+                <div class="tile-body">
+                    <div class="tile-cn">便携易用 · 口袋超声</div>
+                    <div class="tile-en">Portable &amp; Pocket Ultrasound</div>
+                    <div class="tile-desc-cn">人体工学+防摔绳，标配挎包与探头支架。</div>
+                    <div class="tile-desc-en">Ergonomic with lanyard; bag &amp; probe holder.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部联系区 -->
+        <div class="footer">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <div class="contact-title">联系我们 / Contact Us</div>
+                    <div class="contact-item">
+                        <span class="ci-label">地址 / Add</span>
+                        <span class="contact-text-cn">中国天津市西青区天开园</span>
+                        <span class="contact-text-en">Tiankaiyuan, Xiqing District, Tianjin, China</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="ci-label">电话 / Tel</span>
+                        <span class="contact-text-cn">139 9932 1092</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="ci-label">邮箱 / Email</span>
+                        <span class="contact-text-cn">574645820@qq.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="ci-label">网址 / Web</span>
+                        <span class="contact-text-cn">www.armmed.cn</span>
+                    </div>
+                </div>
+                <div class="qr-area">
+                    <img src="images/wechat_qrcode.webp" alt="微信二维码 / WeChat QR Code">
+                    <div class="qr-text">扫码添加微信</div>
+                    <div class="qr-text-en">Scan for WeChat</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

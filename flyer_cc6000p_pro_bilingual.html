@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>CC-6000P_PRO 手持式膀胱超声扫描仪 · 宣传彩页 / Flyer</title>
+<style>
+@page { size: A4 portrait; margin: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+    width: 210mm; height: 297mm;
+    font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", Arial, sans-serif;
+    color: #14213D; background: #fff;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.sheet { width: 210mm; height: 297mm; overflow: hidden; display: flex; flex-direction: column; background: #fff; }
+
+/* ---------- shared ---------- */
+.band {
+    height: 148mm;
+    display: flex; flex-direction: column;
+    position: relative;
+    background: #fff;
+}
+.band.cn { border-bottom: 0.3mm solid #D7E3F4; }
+
+.bar {
+    flex: 0 0 13mm;
+    background: linear-gradient(105deg, #0A2450 0%, #123C7C 62%, #1E4FA3 100%);
+    color: #fff;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 10mm;
+    position: relative;
+}
+.bar::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0;
+    height: 0.7mm;
+    background: linear-gradient(90deg, #38BDF8 0%, #60A5FA 45%, #F59E0B 100%);
+}
+.brand { display: flex; align-items: center; gap: 3mm; }
+.brand-mark {
+    width: 8.4mm; height: 8.4mm; border-radius: 1.8mm;
+    background: #fff; flex: 0 0 auto;
+    display: flex; align-items: center; justify-content: center;
+}
+.brand-mark svg { width: 6.1mm; height: 6.1mm; }
+.brand-cn { font-size: 3.45mm; font-weight: 700; letter-spacing: 0.2px; line-height: 1.2; }
+.brand-en { font-size: 2.05mm; letter-spacing: 0.45px; opacity: 0.85; margin-top: 0.6mm; text-transform: uppercase; }
+.bar-right { text-align: right; }
+.bar-slogan { font-size: 2.9mm; font-weight: 600; letter-spacing: 0.3px; }
+.bar-slogan-en { font-size: 2.0mm; opacity: 0.8; margin-top: 0.5mm; letter-spacing: 0.3px; }
+
+/* title */
+.title-area { flex: 0 0 auto; padding: 3.2mm 10mm 1.8mm; display: flex; align-items: flex-end; justify-content: space-between; gap: 5mm; }
+.eyebrow {
+    font-size: 2.75mm; font-weight: 700; letter-spacing: 1.1px;
+    color: #1E4FA3; text-transform: uppercase;
+    display: flex; align-items: center; gap: 2mm;
+}
+.eyebrow::before { content: ""; width: 6mm; height: 0.9mm; background: #F59E0B; display: block; }
+h1 { font-size: 7.1mm; font-weight: 800; line-height: 1.12; letter-spacing: 0.4px; color: #0A2450; margin-top: 1.5mm; }
+.title-en { font-size: 3.1mm; color: #4B6B9A; font-weight: 500; letter-spacing: 0.2px; margin-top: 0.9mm; }
+.tagline { margin-top: 1.6mm; font-size: 3.15mm; color: #334155; }
+.tagline b { color: #C2410C; }
+.tagline .sep { color: #CBD5E1; margin: 0 2mm; }
+.model-box { text-align: right; flex: 0 0 auto; padding-bottom: 0.6mm; }
+.model-tag {
+    display: inline-block;
+    background: #0A2450; color: #fff;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 4.2mm; font-weight: 700; letter-spacing: 0.8px;
+    padding: 1.4mm 4.6mm; border-radius: 1.2mm;
+    border-bottom: 0.9mm solid #F59E0B;
+}
+.model-sub { font-size: 2.3mm; color: #64748B; margin-top: 1.2mm; letter-spacing: 0.3px; }
+
+/* main */
+.main {
+    flex: 1 1 auto; min-height: 0;
+    display: grid;
+    grid-template-columns: 47mm 86mm 47mm;
+    grid-template-areas: "left stage right";
+    gap: 5mm;
+    padding: 1.2mm 10mm 1.2mm;
+}
+.col { min-width: 0; }
+.col-left { grid-area: left; }
+.col-right { grid-area: right; }
+.stage { grid-area: stage; }
+
+.feature { display: flex; gap: 2.1mm; padding: 1.55mm 0; border-bottom: 0.25mm solid #EDF2FA; }
+.feature:last-child { border-bottom: none; }
+.feature-num {
+    flex: 0 0 5.4mm; height: 5.4mm; border-radius: 1mm;
+    background: #EAF2FE; color: #1E4FA3;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 2.35mm; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 0.3mm;
+}
+.feature-body { flex: 1; min-width: 0; }
+.f-title { font-size: 3.15mm; font-weight: 700; color: #0F2A55; line-height: 1.2; }
+.f-title .num { color: #1E4FA3; }
+.f-desc { font-size: 2.45mm; color: #5A6B85; line-height: 1.3; margin-top: 0.55mm; }
+
+.panel-head {
+    font-size: 2.7mm; font-weight: 700; letter-spacing: 0.7px;
+    color: #1E4FA3; text-transform: uppercase;
+    display: flex; align-items: center; gap: 1.8mm;
+    margin-bottom: 1.4mm;
+}
+.panel-head::before { content: ""; width: 0.9mm; height: 3.6mm; background: #1E4FA3; display: block; }
+.app-item { display: flex; align-items: center; gap: 1.8mm; padding: 1.45mm 0; font-size: 3.15mm; font-weight: 600; color: #22324D; line-height: 1.2; }
+.check {
+    flex: 0 0 4.5mm; height: 4.5mm; border-radius: 50%;
+    background: #0F2A55; color: #fff;
+    font-size: 2.5mm; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+}
+.note {
+    margin-top: 2.2mm;
+    background: #F1F6FE; border-left: 0.9mm solid #60A5FA;
+    padding: 1.7mm 2.1mm;
+    font-size: 2.4mm; line-height: 1.4; color: #405577;
+    border-radius: 0 1mm 1mm 0;
+}
+
+/* stage / product */
+.stage {
+    position: relative;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: #fff;
+    border: 0.3mm solid #E4EDF9;
+    border-radius: 2mm;
+    padding: 2mm 2mm 1.6mm;
+}
+.stage::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 42%, #FFFFFF 0%, #FBFDFF 52%, #F3F8FF 100%);
+    border-radius: 2mm;
+}
+.device-wrap { position: relative; z-index: 1; flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; width: 100%; }
+.device-wrap img {
+    max-width: 100%; max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 2.2mm 2.4mm rgba(15, 42, 85, 0.16));
+}
+.spec-chips { position: relative; z-index: 1; display: flex; gap: 1.6mm; flex-wrap: nowrap; margin-top: 1.4mm; }
+.chip {
+    font-size: 2.2mm; font-weight: 600; color: #1E4FA3;
+    background: #fff; border: 0.3mm solid #C9DCF6;
+    border-radius: 4mm; padding: 0.85mm 2.1mm;
+    white-space: nowrap;
+}
+
+/* contact strip */
+.contact {
+    flex: 0 0 15mm;
+    background: #0A2450;
+    color: #fff;
+    padding: 2.4mm 10mm;
+    display: flex; align-items: center; justify-content: space-between; gap: 4mm;
+}
+.contact-grid { display: grid; grid-template-columns: 1.35fr 1fr 1.05fr 0.9fr; gap: 3mm; flex: 1; }
+.c-item { min-width: 0; }
+.c-label { font-size: 1.95mm; color: #7FB6F8; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; }
+.c-value { font-size: 2.55mm; color: #fff; font-weight: 500; margin-top: 0.5mm; white-space: nowrap; overflow: hidden; }
+.qr { flex: 0 0 auto; display: flex; align-items: center; gap: 2mm; }
+.qr img { width: 10.6mm; height: 10.6mm; background: #fff; padding: 0.5mm; border-radius: 0.6mm; }
+.qr-txt { font-size: 2.0mm; line-height: 1.35; color: #C9DCF6; }
+.qr-txt b { color: #fff; font-size: 2.3mm; display: block; }
+
+/* english half */
+.band.en .title-area { padding-top: 3mm; }
+.band.en h1 { font-size: 6.4mm; letter-spacing: 0; }
+.band.en .title-en { font-size: 2.8mm; }
+.band.en .f-title { font-size: 3.0mm; }
+.band.en .f-desc { font-size: 2.35mm; }
+.band.en .app-item { font-size: 2.95mm; }
+.band.en .note { font-size: 2.3mm; }
+.band.en .eyebrow { font-size: 2.55mm; letter-spacing: 0.8px; }
+.band.en .contact-grid { grid-template-columns: 1.6fr 1fr 1.15fr 0.95fr; }
+
+/* divider mark */
+.divider {
+    flex: 0 0 1mm;
+    background: #fff;
+    position: relative;
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+    <!-- ===================== 中文 · 上半版 ===================== -->
+    <section class="band cn">
+        <div class="bar">
+            <div class="brand">
+                <div class="brand-mark">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <path d="M4 34h11l6-15 9 30 7-22 4 7h19" stroke="#1E4FA3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="brand-cn">长城医学科技（天津）有限公司</div>
+                    <div class="brand-en">Great Wall Medical Technology (Tianjin) Co., Ltd.</div>
+                </div>
+            </div>
+            <div class="bar-right">
+                <div class="bar-slogan">专业医疗器械研发制造商</div>
+                <div class="bar-slogan-en">Professional Medical Device Manufacturer</div>
+            </div>
+        </div>
+
+        <div class="title-area">
+            <div>
+                <div class="eyebrow">泌尿外科 · 膀胱测容解决方案</div>
+                <h1>手持式膀胱超声扫描仪</h1>
+                <div class="tagline"><b>快速 · 准确 · 好用</b><span class="sep">|</span>口袋超声，随测随打</div>
+            </div>
+            <div class="model-box">
+                <div class="model-tag">CC-6000P_PRO</div>
+                <div class="model-sub">手持式 · 内置热敏打印机</div>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="col col-left">
+                <div class="feature">
+                    <div class="feature-num">01</div>
+                    <div class="feature-body">
+                        <div class="f-title"><span class="num">±7%</span> 测量准确度</div>
+                        <div class="f-desc">实时探头姿态导航，快速、准确、易用</div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-num">02</div>
+                    <div class="feature-body">
+                        <div class="f-title">内置热敏打印机</div>
+                        <div class="f-desc">一键热敏打印，随测随打，无需外接</div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-num">03</div>
+                    <div class="feature-body">
+                        <div class="f-title">一键语音备注</div>
+                        <div class="f-desc">智能记录，查房信息随时留存</div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-num">04</div>
+                    <div class="feature-body">
+                        <div class="f-title">一键扫码</div>
+                        <div class="f-desc">二维码扫描，查房复诊免繁琐输入</div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-num">05</div>
+                    <div class="feature-body">
+                        <div class="f-title">全彩色 IPS 电容触摸屏</div>
+                        <div class="f-desc">实时显示超声图像与测量结果</div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-num">06</div>
+                    <div class="feature-body">
+                        <div class="f-title">3350mAh 大容量锂电池</div>
+                        <div class="f-desc">TI BMS 守护电池安全，Type-C 快充，U 盘导出</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stage">
+                <div class="device-wrap">
+                    <img src="images/cc6000p_pro_cutout.png" alt="CC-6000P_PRO 手持式膀胱超声扫描仪">
+                </div>
+                <div class="spec-chips">
+                    <span class="chip">3.1″ IPS 触摸屏</span>
+                    <span class="chip">±7%</span>
+                    <span class="chip">3350mAh</span>
+                    <span class="chip">内置打印</span>
+                </div>
+            </div>
+
+            <div class="col col-right">
+                <div class="panel-head">临床应用</div>
+                <div class="app-item"><span class="check">✓</span>诊断尿潴留</div>
+                <div class="app-item"><span class="check">✓</span>残余尿量测量</div>
+                <div class="app-item"><span class="check">✓</span>排尿功能监测</div>
+                <div class="app-item"><span class="check">✓</span>养老院适用</div>
+                <div class="app-item"><span class="check">✓</span>泌尿外科随访门诊</div>
+                <div class="note">口袋超声，手持式人体工学及防摔绳设计，查房、门诊、随访轻松携带。</div>
+            </div>
+        </div>
+
+        <div class="contact">
+            <div class="contact-grid">
+                <div class="c-item">
+                    <div class="c-label">地址 / Add</div>
+                    <div class="c-value">中国天津市西青区高新区</div>
+                </div>
+                <div class="c-item">
+                    <div class="c-label">电话 / Tel</div>
+                    <div class="c-value">139 9932 1092</div>
+                </div>
+                <div class="c-item">
+                    <div class="c-label">邮箱 / Email</div>
+                    <div class="c-value">pcjiushizhu@qq.com</div>
+                </div>
+                <div class="c-item">
+                    <div class="c-label">网址 / Web</div>
+                    <div class="c-value">www.armmed.cn</div>
+                </div>
+            </div>
+            <div class="qr">
+                <img src="images/wechat_qrcode.webp" alt="微信二维码">
+                <div class="qr-txt"><b>扫码添加微信</b>Scan for WeChat</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== English · 下半版 ===================== -->
+    <section class="band en">
+        <div class="bar">
+            <div class="brand">
+                <div class="brand-mark">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <path d="M4 34h11l6-15 9 30 7-22 4 7h19" stroke="#1E4FA3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="brand-cn" style="font-size:3.2mm;">Great Wall Medical Technology (Tianjin) Co., Ltd.</div>
+                    <div class="brand-en" style="text-transform:none; letter-spacing:0.2px;">长城医学科技（天津）有限公司</div>
+                </div>
+            </div>
+            <div class="bar-right">
+                <div class="bar-slogan">Professional Medical Device Manufacturer</div>
+                <div class="bar-slogan-en">专业医疗器械研发制造商</div>
+            </div>
+        </div>
+
+        <div class="title-area">
+            <div>
+                <div class="eyebrow">Urology · Bladder Volume Measurement Solution</div>
+                <h1>Handheld Bladder Ultrasound Scanner</h1>
+                <div class="tagline"><b>Fast · Accurate · Easy to Use</b><span class="sep">|</span>Pocket ultrasound, measure &amp; print on the spot</div>
+            </div>
+            <div class="model-box">
+                <div class="model-tag">CC-6000P_PRO</div>
+                <div class="model-sub">Handheld · Built-in thermal printer</div>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="col col-left">
+                <div class="feature">
+                    <div class="feature-num">01</div>
+                    <div class="feature-body">
+                        <div class="f-title"><span class="num">±7%</span> Measurement Accuracy</div>
+                        <div class="f-desc">Real-time probe navigation, fast and reliable</div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-num">02</div>
+                    <div class="feature-body">
+                        <div class="f-title">Built-in Thermal Printer</div>
+                        <div class="f-desc">One-tap printing on the spot, no external printer</div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-num">03</div>
+                    <div class="feature-body">
+                        <div class="f-title">One-tap Voice Memo</div>
+                        <div class="f-desc">Smart records keep round notes at hand</div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-num">04</div>
+                    <div class="feature-body">
+                        <div class="f-title">One-tap QR Scanning</div>
+                        <div class="f-desc">Fast, error-free patient input for rounds &amp; follow-ups</div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-num">05</div>
+                    <div class="feature-body">
+                        <div class="f-title">Full-color IPS Capacitive Touchscreen</div>
+                        <div class="f-desc">Live ultrasound image and measurement results</div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-num">06</div>
+                    <div class="feature-body">
+                        <div class="f-title">3350mAh Li-ion Battery</div>
+                        <div class="f-desc">TI BMS protection, Type-C fast charging, USB export</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stage">
+                <div class="device-wrap">
+                    <img src="images/cc6000p_pro_cutout.png" alt="CC-6000P_PRO Handheld Bladder Ultrasound Scanner">
+                </div>
+                <div class="spec-chips">
+                    <span class="chip">3.1″ IPS Touchscreen</span>
+                    <span class="chip">±7%</span>
+                    <span class="chip">3350mAh</span>
+                    <span class="chip">Built-in Printer</span>
+                </div>
+            </div>
+
+            <div class="col col-right">
+                <div class="panel-head">Clinical Applications</div>
+                <div class="app-item"><span class="check">✓</span>Urinary retention diagnosis</div>
+                <div class="app-item"><span class="check">✓</span>Residual urine measurement</div>
+                <div class="app-item"><span class="check">✓</span>Voiding function monitoring</div>
+                <div class="app-item"><span class="check">✓</span>Nursing homes</div>
+                <div class="app-item"><span class="check">✓</span>Urology follow-up clinics</div>
+                <div class="note">Pocket-sized, ergonomic handheld design with anti-drop strap — easy to carry on rounds, in clinics and follow-ups.</div>
+            </div>
+        </div>
+
+        <div class="contact">
+            <div class="contact-grid">
+                <div class="c-item">
+                    <div class="c-label">Address</div>
+                    <div class="c-value">High-tech Zone, Xiqing District, Tianjin, China</div>
+                </div>
+                <div class="c-item">
+                    <div class="c-label">Tel</div>
+                    <div class="c-value">+86 139 9932 1092</div>
+                </div>
+                <div class="c-item">
+                    <div class="c-label">Email</div>
+                    <div class="c-value">pcjiushizhu@qq.com</div>
+                </div>
+                <div class="c-item">
+                    <div class="c-label">Website</div>
+                    <div class="c-value">www.armmed.cn</div>
+                </div>
+            </div>
+            <div class="qr">
+                <img src="images/wechat_qrcode.webp" alt="WeChat QR Code">
+                <div class="qr-txt"><b>Scan for WeChat</b>扫码添加微信</div>
+            </div>
+        </div>
+    </section>
+
+</div>
+</body>
+</html>

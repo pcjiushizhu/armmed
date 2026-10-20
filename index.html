@@ -1,1059 +1,402 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>长城医学 - 专业医疗器械研发制造商</title>
-    <meta name="description" content="长城医学科技（天津）有限公司是专业的医疗器械研发制造商，提供超声类仪器、中耳功能测试等产品。">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>长城医学科技（天津）有限公司 - 手持式膀胱超声扫描仪 CC-6000P_PRO</title>
+    <meta name="description" content="长城医学科技（天津）有限公司，手持式膀胱超声扫描仪 CC-6000P_PRO，泌尿科膀胱超声测容解决方案。">
     <style>
-        /* 关键CSS内联 */
         :root {
             --primary: #1E40AF;
             --secondary: #3B82F6;
             --accent: #60A5FA;
             --dark: #1E293B;
             --light: #F8FAFC;
+            --heart: #0284C7;
+            --border: #E2E8F0;
         }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
-            font-family: 'Inter', system-ui, sans-serif;
+            font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
             background-color: var(--light);
             color: var(--dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1120px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 1.25rem;
         }
-        .nav {
-            position: fixed;
+
+        /* 顶部品牌栏 */
+        .site-header {
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(8px);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             z-index: 50;
-            padding: 0.75rem 0;
+            background-color: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
         }
-        .nav-container {
+        .header-inner {
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
+            gap: 1rem;
+            min-height: 68px;
         }
-        .nav-logo {
+        .brand {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.7rem;
+            text-decoration: none;
+            color: inherit;
+            min-width: 0;
+        }
+        .brand-mark {
+            width: 38px;
+            height: 38px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #ffffff;
+            font-size: 1.25rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+        .brand-name {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .brand-sub {
+            font-size: 0.72rem;
+            color: #64748B;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
         .nav-links {
             display: none;
-            gap: 2rem;
+            gap: 1.75rem;
+            margin-left: auto;
         }
-        @media (min-width: 768px) {
+        .nav-links a {
+            font-size: 0.94rem;
+            font-weight: 500;
+            color: var(--dark);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .lang-btn {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            border-radius: 999px;
+            padding: 0.32rem 0.85rem;
+            text-decoration: none;
+            background: transparent;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            white-space: nowrap;
+        }
+        .lang-btn:hover {
+            background-color: var(--primary);
+            color: #ffffff;
+        }
+        .menu-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            font-size: 1.25rem;
+            color: var(--dark);
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            border-top: 1px solid var(--border);
+            background: #ffffff;
+        }
+        .mobile-menu.open {
+            display: flex;
+        }
+        .mobile-menu a {
+            padding: 0.9rem 1.25rem;
+            font-size: 0.95rem;
+            color: var(--dark);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+        }
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+        @media (min-width: 860px) {
             .nav-links {
                 display: flex;
             }
-        }
-        .nav-link {
-            font-weight: 500;
-            color: var(--dark);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .nav-link:hover {
-            color: var(--primary);
-        }
-        .nav-toggle {
-            font-size: 1.5rem;
-            color: var(--dark);
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-        @media (min-width: 768px) {
-            .nav-toggle {
+            .menu-btn {
+                display: none;
+            }
+            .mobile-menu.open {
                 display: none;
             }
         }
-        .nav-links.active {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background-color: white;
-            padding: 1rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            gap: 1rem;
+
+        /* 彩页大图 */
+        .flyer-section {
+            padding: 2.5rem 0 3rem;
         }
-        .section {
-            padding: 4rem 0;
+        .flyer-frame {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 0.75rem;
+            box-shadow: 0 18px 45px -22px rgba(30, 64, 175, 0.28);
         }
-        @media (min-width: 768px) {
-            .section {
-                padding: 6rem 0;
-            }
+        .flyer-frame img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
-        .h2 {
-            font-size: 2rem;
+        .flyer-hint {
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #64748B;
+        }
+
+        /* 联系我们 */
+        .contact-section {
+            padding: 3.5rem 0 4rem;
+            background: #ffffff;
+            border-top: 1px solid var(--border);
+        }
+        .section-head {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto 2.5rem;
+        }
+        .section-head h2 {
+            font-size: 1.75rem;
             font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1rem;
+            color: var(--dark);
+            letter-spacing: -0.4px;
         }
-        .h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 1rem;
+        .section-head p {
+            margin-top: 0.6rem;
+            color: #64748B;
+            font-size: 0.95rem;
         }
-        .p {
-            color: #64748b;
-            line-height: 1.6;
-        }
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-        }
-        .btn:hover {
-            background-color: var(--secondary);
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            max-width: 720px;
+            margin: 0 auto;
         }
         .card {
-            background-color: white;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: box-shadow 0.3s ease;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.75rem;
         }
-        .card:hover {
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-        .card-img {
-            width: 100%;
-            height: 16rem;
-            object-fit: cover;
-        }
-        /* 轮播图片样式，适应纵向图片 */
-        .carousel .card-img {
-            height: 20rem;
-            object-fit: contain;
-            background-color: #f8fafc;
-        }
-        
-        /* 图片查看器样式 */
-        .image-viewer {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+        .info-list {
+            list-style: none;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-        .image-viewer.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        .image-viewer-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90%;
-        }
-        .image-viewer img {
-            max-width: 100%;
-            max-height: 80vh;
-            object-fit: contain;
-        }
-        .image-viewer-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-        .image-viewer-close:hover {
-            color: #f3f4f6;
-        }
-        .image-viewer img {
-            cursor: pointer;
-        }
-        .card-content {
-            padding: 1.5rem;
-        }
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        .card-text {
-            color: #64748b;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-        .grid {
-            display: grid;
-            gap: 2rem;
-        }
-        @media (min-width: 768px) {
-            .grid-cols-2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (min-width: 1024px) {
-            .grid-cols-3 {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        .flex {
-            display: flex;
-        }
-        .flex-col {
             flex-direction: column;
+            gap: 1.1rem;
         }
-        .items-center {
-            align-items: center;
-        }
-        .justify-center {
-            justify-content: center;
-        }
-        .justify-between {
-            justify-content: space-between;
-        }
-        .text-center {
-            text-align: center;
-        }
-        .mb-4 {
-            margin-bottom: 1rem;
-        }
-        .mb-8 {
-            margin-bottom: 2rem;
-        }
-        .mt-4 {
-            margin-top: 1rem;
-        }
-        .mt-8 {
-            margin-top: 2rem;
-        }
-        .p-4 {
-            padding: 1rem;
-        }
-        .p-8 {
-            padding: 2rem;
-        }
-        .bg-gray-50 {
-            background-color: #f8fafc;
-        }
-        .bg-dark {
-            background-color: var(--dark);
-            color: white;
-        }
-        .text-white {
-            color: white;
-        }
-        .text-gray-400 {
-            color: #94a3b8;
-        }
-        .list-disc {
-            list-style-type: disc;
-        }
-        .list-inside {
-            list-style-position: inside;
-        }
-        .space-y-2 > * + * {
-            margin-top: 0.5rem;
-        }
-        .space-y-4 > * + * {
-            margin-top: 1rem;
-        }
-        .space-x-4 {
-            gap: 1rem;
-        }
-        .w-full {
-            width: 100%;
-        }
-        .h-64 {
-            height: 16rem;
-        }
-        .object-cover {
-            object-fit: cover;
-        }
-        .rounded-xl {
-            border-radius: 0.75rem;
-        }
-        .shadow-md {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .relative {
-            position: relative;
-        }
-        .overflow-hidden {
-            overflow: hidden;
-        }
-        .pt-24 {
-            padding-top: 6rem;
-        }
-        @media (min-width: 768px) {
-            .pt-32 {
-                padding-top: 8rem;
-            }
-        }
-        .pb-16 {
-            padding-bottom: 4rem;
-        }
-        @media (min-width: 768px) {
-            .pb-24 {
-                padding-bottom: 6rem;
-            }
-        }
-        .max-w-3xl {
-            max-width: 48rem;
-        }
-        .mx-auto {
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .px-4 {
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-        .py-3 {
-            padding-top: 0.75rem;
-            padding-bottom: 0.75rem;
-        }
-        .py-12 {
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-        }
-        .border-t {
-            border-top: 1px solid #334155;
-        }
-        .mt-8 {
-            margin-top: 2rem;
-        }
-        .pt-8 {
-            padding-top: 2rem;
-        }
-        /* 轮播样式 */
-        .carousel {
+        .info-list li {
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            gap: 0.85rem;
+            align-items: flex-start;
         }
-        .carousel-item {
+        .info-icon {
             flex-shrink: 0;
-            width: 100%;
-        }
-        @media (min-width: 768px) {
-            .carousel-item {
-                width: 50%;
-            }
-        }
-        @media (min-width: 1024px) {
-            .carousel-item {
-                width: 50%;
-            }
-        }
-        .carousel-control {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.8);
+            width: 34px;
+            height: 34px;
+            border-radius: 9px;
+            background: #EFF6FF;
+            color: var(--primary);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .carousel-control:hover {
-            background-color: white;
-        }
-        .carousel-control-prev {
-            left: 0.5rem;
-        }
-        .carousel-control-next {
-            right: 0.5rem;
-        }
-        .carousel-indicators {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 2rem;
-        }
-        .carousel-indicator {
-            width: 0.75rem;
-            height: 0.75rem;
-            border-radius: 50%;
-            background-color: #e2e8f0;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .carousel-indicator.active {
-            background-color: var(--primary);
-        }
-        /* 表单样式 */
-        .form-group {
-            margin-bottom: 1rem;
-        }
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #334155;
-        }
-        .form-input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.5rem;
             font-size: 1rem;
         }
-        .form-input:focus {
-            outline: none;
-            ring: 2px;
-            ring-color: var(--primary);
+        .info-list h3 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #64748B;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
         }
-        .form-textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            resize: vertical;
-            min-height: 10rem;
+        .info-list p,
+        .info-list a {
+            font-size: 0.95rem;
+            color: var(--dark);
+            text-decoration: none;
         }
-        .form-textarea:focus {
-            outline: none;
-            ring: 2px;
-            ring-color: var(--primary);
+        .info-list a:hover {
+            color: var(--primary);
         }
-        /* 响应式调整 */
-        @media (max-width: 767px) {
-            .h2 {
-                font-size: 1.75rem;
-            }
-            .h3 {
-                font-size: 1.25rem;
-            }
-            .card-img {
-                height: 12rem;
-            }
+        /* 页脚 */
+        .site-footer {
+            background: var(--dark);
+            color: #CBD5E1;
+            padding: 1.75rem 0;
+            text-align: center;
+            font-size: 0.85rem;
         }
-        /* 图片懒加载 */
-        .lazy-image {
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        .site-footer .heart {
+            color: #38BDF8;
         }
-        .lazy-image.loaded {
-            opacity: 1;
-        }
-        /* 加载动画 */
-        .loader {
-            width: 100%;
-            height: 16rem;
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
-        }
-        @keyframes loading {
-            0% {
-                background-position: 200% 0;
-            }
-            100% {
-                background-position: -200% 0;
-            }
+        .site-footer a {
+            color: #93C5FD;
+            text-decoration: none;
         }
     </style>
-    <!-- 延迟加载Tailwind和Font Awesome -->
-    <script src="https://cdn.tailwindcss.com" defer></script>
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" defer>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1E40AF',
-                        secondary: '#3B82F6',
-                        accent: '#60A5FA',
-                        dark: '#1E293B',
-                        light: '#F8FAFC'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <title>长城医学</title>
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="nav">
-        <div class="container nav-container">
-            <div class="nav-logo">
-                <i class="fa fa-heartbeat" style="color: var(--primary); font-size: 1.5rem;"></i>
-                <span style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">长城医学科技（天津）有限公司</span>
-            </div>
-            <div class="nav-links">
-                <a href="#home" class="nav-link">首页</a>
-                <a href="#products" class="nav-link">产品中心</a>
-                <a href="#about" class="nav-link">关于我们</a>
-                <a href="#team" class="nav-link">团队介绍</a>
-                <a href="ceo.html" class="nav-link">CEO简介</a>
-                <a href="#certifications" class="nav-link">荣誉证书</a>
-                <a href="#contact" class="nav-link">联系我们</a>
-                <a href="index_en.html" class="nav-link" style="border: 1px solid var(--primary); padding: 0.25rem 0.75rem; border-radius: 0.25rem; color: var(--primary); font-size: 0.875rem;">EN</a>
-            </div>
-            <button class="nav-toggle">
-                <i class="fa fa-bars"></i>
-            </button>
-        </div>
-    </nav>
-
-    <!-- 首页轮播 -->
-    <section id="home" class="section pt-24 pb-16 overflow-hidden">
-        <div class="container">
-            <div class="relative">
-                <div id="carousel" class="carousel">
-                    <!-- 轮播项 1 -->
-                    <div class="carousel-item p-4">
-                        <div class="card">
-                            <div class="loader"></div>
-                            <img src="images/bladder2.webp" alt="CC-6000Pro 膀胱超声扫描仪" class="card-img lazy-image" loading="lazy">
-                            <div class="card-content">
-                                <h3 class="card-title">CC-6000Pro 膀胱超声扫描仪</h3>
-                                <p class="card-text">高精度超声成像系统，全自动定位超声探头，适用于多种超声诊断临床场景。</p>
-                                <a href="#" class="btn">了解更多</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 轮播项 2 -->
-                    <div class="carousel-item p-4">
-                        <div class="card">
-                            <div class="loader"></div>
-                            <img src="images/ear1.webp" alt="无创式新生儿/婴儿测听系统" class="card-img lazy-image" loading="lazy">
-                            <div class="card-content">
-                                <h3 class="card-title">无创式新生儿/婴儿测听系统</h3>
-                                <p class="card-text">先进的声导抗技术，精准评估中耳功能，为听力障碍诊断提供科学依据。</p>
-                                <a href="#" class="btn">了解更多</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 轮播控制按钮 -->
-                <button id="prevBtn" class="carousel-control carousel-control-prev">
-                    <i class="fa fa-chevron-left" style="color: var(--primary);"></i>
-                </button>
-                <button id="nextBtn" class="carousel-control carousel-control-next">
-                    <i class="fa fa-chevron-right" style="color: var(--primary);"></i>
-                </button>
-                <!-- 轮播指示器 -->
-                <div class="carousel-indicators">
-                    <button class="carousel-indicator active"></button>
-                    <button class="carousel-indicator"></button>
-                </div>
+    <!-- 顶部品牌栏 -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                <span class="brand-mark">♥</span>
+                <span class="brand-text">
+                    <span class="brand-name">长城医学科技（天津）有限公司</span>
+                    <span class="brand-sub">GreatWallMed</span>
+                </span>
+            </a>
+            <nav class="nav-links">
+                <a href="#flyer">产品彩页</a>
+                <a href="#contact">联系我们</a>
+            </nav>
+            <div class="header-actions">
+                <a class="lang-btn" href="index_en.html" title="Switch to English">EN</a>
+                <button class="menu-btn" id="menuBtn" type="button" aria-label="打开菜单" aria-expanded="false">☰</button>
             </div>
         </div>
-    </section>
-
-    <!-- 公司简介 -->
-    <section id="about" class="section bg-gray-50">
-        <div class="container">
-            <div class="max-w-3xl mx-auto text-center mb-8">
-                <h2 class="h2">关于 长城医学</h2>
-                <p class="p">长城医学科技（天津）有限公司成立于2026年3月12日，是一家专注于医疗器械研发与制造的高科技公司，致力于为全球医疗行业提供创新、可靠的医疗设备解决方案。</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="card p-8">
-                    <h3 class="h3">我们的使命</h3>
-                    <p class="p mb-4">通过创新技术和优质产品，提升医疗诊断与治疗水平，改善患者生活质量，为全球 healthcare 事业做出贡献。</p>
-                    <h3 class="h3">核心业务</h3>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2">
-                        <li>超声类仪器研发与制造</li>
-                        <li>新生儿中耳功能测试（声导抗）</li>
-                    </ul>
-                </div>
-                <div class="card p-8">
-                    <h3 class="h3">全球市场</h3>
-                    <p class="p mb-4">我们的产品主要面向国际市场，已远销欧洲、北美、亚太等多个国家和地区，受到全球客户的信赖与好评。</p>
-                    <h3 class="h3">技术优势</h3>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2">
-                        <li>自主研发核心技术</li>
-                        <li>严格的质量控制体系</li>
-                        <li>持续的创新能力</li>
-                        <li>专业的技术支持团队</li>
-                        <li>完善的售后服务网络</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#flyer">产品彩页</a>
+            <a href="#contact">联系我们</a>
+            <a href="index_en.html">English</a>
         </div>
-    </section>
+    </header>
 
-    <!-- 产品中心 -->
-    <section id="products" class="section">
-        <div class="container">
-            <div class="max-w-3xl mx-auto text-center mb-8">
-                <h2 class="h2">产品中心</h2>
-                <p class="p">我们提供多种高品质医疗器械，满足不同医疗场景的需求。</p>
+    <main>
+        <!-- 产品彩页大图 -->
+        <section class="flyer-section" id="flyer">
+            <div class="container">
+                <figure class="flyer-frame">
+                    <a href="images/flyer_6000p_pro_cn_en.png" target="_blank" rel="noopener">
+                        <img src="images/flyer_6000p_pro_cn_en.png"
+                             alt="手持式膀胱超声扫描仪 CC-6000P_PRO 产品宣传彩页">
+                    </a>
+                </figure>
+                <p class="flyer-hint">点击图片可查看原图</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 产品 1 -->
-                <div class="card">
-                    <div class="loader"></div>
-                    <img src="images/bladder2.webp" alt="CC-6000Pro 膀胱超声扫描仪" class="card-img lazy-image" loading="lazy">
-                    <div class="card-content">
-                        <h3 class="card-title">CC-6000Pro 膀胱超声扫描仪</h3>
-                        <p class="card-text">具备嵌入式操作系统，全新的超声扫描定位算法，便捷式设计，碳纤维防摔探头。</p>
-                        <ul class="card-features" style="list-style: none; padding: 0; margin: 0.5rem 0; color: var(--gray); font-size: 0.9rem; line-height: 1.8;">
-                            <li>✓ 测量准确度±7%</li>
-                            <li>✓ 快速，准确，好用</li>
-                            <li>✓ 实时探头姿态导航</li>
-                            <li>✓ 支持DICOM</li>
-                            <li>✓ 支持热敏打印</li>
-                            <li>✓ 支持二维码扫描</li>
-                            <li>✓ 无电池，便携式设计，手机供电，安全可靠，随时随地扫描</li>
+        </section>
+
+        <!-- 联系我们 -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="section-head">
+                    <h2>联系我们</h2>
+                    <p>如果您对我们的产品感兴趣，或希望获取更多资料与报价，欢迎与我们联系。</p>
+                </div>
+                <div class="contact-grid">
+                    <!-- 联系方式 -->
+                    <div class="card">
+                        <ul class="info-list">
+                            <li>
+                                <span class="info-icon">◉</span>
+                                <div>
+                                    <h3>公司地址</h3>
+                                    <p>中国天津市西青区高新区</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="info-icon">☎</span>
+                                <div>
+                                    <h3>联系电话</h3>
+                                    <p><a href="tel:13999321092">13999321092</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="info-icon">✉</span>
+                                <div>
+                                    <h3>电子邮箱</h3>
+                                    <p><a href="mailto:13999321092@163.com">13999321092@163.com</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="info-icon">⌘</span>
+                                <div>
+                                    <h3>官方网站</h3>
+                                    <p><a href="https://www.armmed.cn" target="_blank" rel="noopener">www.armmed.cn</a></p>
+                                </div>
+                            </li>
                         </ul>
-                        <a href="#" class="btn">产品详情</a>
                     </div>
-                </div>
-                <!-- 产品 2 -->
-                <div class="card">
-                    <div class="loader"></div>
-                    <img src="images/ear2.webp" alt="CC-5000 中耳功能分析仪" class="card-img lazy-image" loading="lazy">
-                    <div class="card-content">
-                        <h3 class="card-title">CC-5000 中耳功能分析仪</h3>
-                        <p class="card-text">以小见大，用便携科技守护宝宝聆听世界的第一步，便携式操作系统内置打印机，精准的AI智能算法，具备耳声发射功能。</p>
-                        <a href="#" class="btn">产品详情</a>
-                    </div>
-                </div>
-
-                <!-- 产品 4 -->
-                <div class="card">
-                    <div class="loader"></div>
-                    <img src="images/oct2.webp" alt="CC-9000 OCT眼科影像" class="card-img lazy-image" loading="lazy">
-                    <div class="card-content">
-                        <h3 class="card-title">CC-9000 OCT眼科影像</h3>
-                        <p class="card-text">超广角光学相干断层扫描仪，高分辨率眼部成像，助力眼科疾病早期诊断。</p>
-                        <a href="#" class="btn">产品详情</a>
-                    </div>
-                </div>
-                <!-- 产品 4 -->
-                <div class="card">
-                    <div class="loader"></div>
-                    <img src="images/pacs2.webp" alt="医疗影像工作站" class="card-img lazy-image" loading="lazy">
-                    <div class="card-content">
-                        <h3 class="card-title">医疗影像工作站</h3>
-                        <p class="card-text">专业的医疗影像处理软件，支持多种格式，提供丰富的AI分析工具。</p>
-                        <a href="#" class="btn">产品详情</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 科技进步奖 -->
-    <section id="certifications" class="section bg-gray-50">
-        <div class="container">
-            <div class="max-w-3xl mx-auto text-center mb-8">
-                <h2 class="h2">科技进步奖</h2>
-                <p class="p">我们在医疗器械领域的创新成果获得了多项科技进步奖项，彰显了我们的技术实力和行业影响力。</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- 科技进步奖二等奖 -->
-                <div class="card p-6 text-center">
-                    <div class="mb-4">
-                        <img src="images/tech2.jpg" alt="科技进步奖二等奖" class="card-img w-32 h-32 mx-auto object-cover rounded-lg">
-                    </div>
-                    <h3 class="h3">科技进步奖二等奖</h3>
-                    <p class="p text-gray-600">便携式超声扫描定位系统的研发与应用，获得天津市科技进步二等奖。</p>
-                </div>
-                <!-- 科技进步奖三等奖 -->
-                <div class="card p-6 text-center">
-                    <div class="mb-4">
-                        <img src="images/tech3.jpg" alt="科技进步奖三等奖" class="card-img w-32 h-32 mx-auto object-cover rounded-lg">
-                    </div>
-                    <h3 class="h3">科技进步奖三等奖</h3>
-                    <p class="p text-gray-600">320W获天津市进步三等奖</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- 联系我们 -->
-    <section id="contact" class="section bg-gray-50">
-        <div class="container">
-            <div class="max-w-3xl mx-auto text-center mb-8">
-                <h2 class="h2">联系我们</h2>
-                <p class="p">如果您对我们的产品感兴趣，或者有任何问题，欢迎随时联系我们。</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="card p-8">
-                    <h3 class="h3">联系方式</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fa fa-map-marker" style="color: var(--primary); font-size: 1.5rem; margin-top: 0.25rem; margin-right: 1rem;"></i>
-                            <div>
-                                <h4 style="font-weight: 500;">公司地址</h4>
-                                <p class="text-gray-600">中国天津市西青区天开园</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fa fa-phone" style="color: var(--primary); font-size: 1.5rem; margin-top: 0.25rem; margin-right: 1rem;"></i>
-                            <div>
-                                <h4 style="font-weight: 500;">联系电话</h4>
-                                <p class="text-gray-600">+86 18322134439</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fa fa-envelope" style="color: var(--primary); font-size: 1.5rem; margin-top: 0.25rem; margin-right: 1rem;"></i>
-                            <div>
-                                <h4 style="font-weight: 500;">电子邮箱</h4>
-                                <p class="text-gray-600"><a href="mailto:574645820@qq.com" style="color: var(--primary); text-decoration: none; transition: color 0.3s ease;">574645820@qq.com</a></p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fa fa-globe" style="color: var(--primary); font-size: 1.5rem; margin-top: 0.25rem; margin-right: 1rem;"></i>
-                            <div>
-                                <h4 style="font-weight: 500;">官方网站</h4>
-                                <p class="text-gray-600"><a href="https://www.armmed.cn" target="_blank" style="color: var(--primary); text-decoration: none; transition: color 0.3s ease;">www.armmed.cn</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-8 flex space-x-4">
-                        <a href="#" style="background-color: var(--primary); color: white; width: 2.5rem; height: 2.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s ease;">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                        <a href="#" style="background-color: var(--primary); color: white; width: 2.5rem; height: 2.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s ease;">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                        <a href="#" style="background-color: var(--primary); color: white; width: 2.5rem; height: 2.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s ease;">
-                            <i class="fa fa-linkedin"></i>
-                        </a>
-                        <a href="#" style="background-color: var(--primary); color: white; width: 2.5rem; height: 2.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s ease;">
-                            <i class="fa fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="card p-8 text-center">
-                    <h3 class="h3">扫码添加微信</h3>
-                    <div class="mt-4">
-                        <img src="images/wechat_qrcode.webp" alt="微信二维码" style="width: 200px; height: 200px; margin: 0 auto;">
-                    </div>
-                    <p class="mt-4 text-gray-600">扫码添加我们的微信，获取更多产品信息</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- 页脚 -->
-    <footer class="bg-dark text-white py-12">
+    <footer class="site-footer">
         <div class="container">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <i class="fa fa-heartbeat" style="color: var(--accent); font-size: 1.5rem;"></i>
-                        <span style="font-size: 1.5rem; font-weight: bold; color: var(--accent);">长城医学</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">长城医学科技（天津）有限公司是专业的医疗器械研发制造商，为全球医疗行业提供创新解决方案。</p>
-                    <div class="flex space-x-4">
-                        <a href="#" style="color: #94a3b8; transition: color 0.3s ease;">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                        <a href="#" style="color: #94a3b8; transition: color 0.3s ease;">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                        <a href="#" style="color: #94a3b8; transition: color 0.3s ease;">
-                            <i class="fa fa-linkedin"></i>
-                        </a>
-                        <a href="#" style="color: #94a3b8; transition: color 0.3s ease;">
-                            <i class="fa fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent);">快速链接</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#home" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">首页</a></li>
-                        <li><a href="#products" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">产品中心</a></li>
-                        <li><a href="#about" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">关于我们</a></li>
-                        <li><a href="#team" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">团队介绍</a></li>
-                        <li><a href="ceo.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">CEO简介</a></li>
-                        <li><a href="#certifications" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">荣誉证书</a></li>
-                        <li><a href="#contact" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">联系我们</a></li>
-                        <li><a href="downloads/cc6000p_pro.apk" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;" download>APP下载</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent);">产品系列</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">超声扫描仪</a></li>
-                        <li><a href="#" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">中耳功能测试仪</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent);">联系我们</h4>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <i class="fa fa-map-marker" style="margin-right: 0.5rem; color: var(--accent);"></i>
-                            <span class="text-gray-400">中国天津市西青区天开园</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fa fa-phone" style="margin-right: 0.5rem; color: var(--accent);"></i>
-                            <span class="text-gray-400">+86 18322134439</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fa fa-envelope" style="margin-right: 0.5rem; color: var(--accent);"></i>
-                            <a href="mailto:574645820@qq.com" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">574645820@qq.com</a>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fa fa-globe" style="margin-right: 0.5rem; color: var(--accent);"></i>
-                            <a href="https://www.armmed.cn" target="_blank" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">www.armmed.cn</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-                <p class="text-gray-400">&copy; 2026 长城医学科技（天津）有限公司. 保留所有权利。</p>
-            </div>
+            <p>© 2026 长城医学科技（天津）有限公司 · Made with <span class="heart">♥</span> in Tianjin</p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        // 图片懒加载
-        document.addEventListener('DOMContentLoaded', function() {
-            const lazyImages = document.querySelectorAll('.lazy-image');
-            
-            if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver(function(entries, observer) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            const image = entry.target;
-                            image.src = image.dataset.src || image.src;
-                            image.classList.add('loaded');
-                            // 移除加载动画
-                            const loader = image.previousElementSibling;
-                            if (loader && loader.classList.contains('loader')) {
-                                loader.remove();
-                            }
-                            imageObserver.unobserve(image);
-                        }
-                    });
-                });
-                
-                lazyImages.forEach(function(image) {
-                    imageObserver.observe(image);
-                });
-            } else {
-                // 降级方案
-                lazyImages.forEach(function(image) {
-                    image.src = image.dataset.src || image.src;
-                    image.classList.add('loaded');
-                    const loader = image.previousElementSibling;
-                    if (loader && loader.classList.contains('loader')) {
-                        loader.remove();
-                    }
-                });
+        // 移动端菜单
+        var menuBtn = document.getElementById('menuBtn');
+        var mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', function () {
+            var open = mobileMenu.classList.toggle('open');
+            menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        mobileMenu.addEventListener('click', function (e) {
+            if (e.target.tagName === 'A') {
+                mobileMenu.classList.remove('open');
+                menuBtn.setAttribute('aria-expanded', 'false');
             }
         });
-        
-        // 轮播功能
-        document.addEventListener('DOMContentLoaded', function() {
-            const carousel = document.getElementById('carousel');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const slides = carousel.children;
-            let currentIndex = 0;
-            const totalSlides = slides.length;
-            let isDragging = false;
-            let startX = 0;
-            let currentTranslate = 0;
-            let prevTranslate = 0;
-            
-            function updateCarousel() {
-                const slideWidth = slides[0].offsetWidth;
-                carousel.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-                // 更新指示器
-                const indicators = document.querySelectorAll('.carousel-indicator');
-                indicators.forEach((indicator, index) => {
-                    if (index === currentIndex) {
-                        indicator.classList.add('active');
-                    } else {
-                        indicator.classList.remove('active');
-                    }
-                });
-            }
-            
-            prevBtn.addEventListener('click', function() {
-                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                updateCarousel();
-                prevTranslate = -currentIndex * slides[0].offsetWidth;
-            });
-            
-            nextBtn.addEventListener('click', function() {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                updateCarousel();
-                prevTranslate = -currentIndex * slides[0].offsetWidth;
-            });
-            
-            // 点击指示器导航
-            const indicators = document.querySelectorAll('.carousel-indicator');
-            indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', function() {
-                    currentIndex = index;
-                    updateCarousel();
-                    prevTranslate = -currentIndex * slides[0].offsetWidth;
-                });
-            });
-            
-            // 手势滑动功能
-            carousel.addEventListener('mousedown', startDrag);
-            carousel.addEventListener('touchstart', startDrag);
-            
-            function startDrag(e) {
-                isDragging = true;
-                startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
-                carousel.style.cursor = 'grabbing';
-            }
-            
-            carousel.addEventListener('mousemove', drag);
-            carousel.addEventListener('touchmove', drag);
-            
-            function drag(e) {
-                if (!isDragging) return;
-                const currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
-                const diffX = currentX - startX;
-                const slideWidth = slides[0].offsetWidth;
-                currentTranslate = prevTranslate + diffX;
-                carousel.style.transform = `translateX(${currentTranslate}px)`;
-            }
-            
-            carousel.addEventListener('mouseup', endDrag);
-            carousel.addEventListener('mouseleave', endDrag);
-            carousel.addEventListener('touchend', endDrag);
-            
-            function endDrag() {
-                isDragging = false;
-                carousel.style.cursor = 'grab';
-                const slideWidth = slides[0].offsetWidth;
-                const diff = currentTranslate - prevTranslate;
-                
-                if (diff > 50) {
-                    // 向右滑动
-                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                } else if (diff < -50) {
-                    // 向左滑动
-                    currentIndex = (currentIndex + 1) % totalSlides;
-                }
-                
-                updateCarousel();
-                prevTranslate = -currentIndex * slideWidth;
-                carousel.style.transform = `translateX(${prevTranslate}px)`;
-            }
-            
 
-            
-            // 响应式调整
-            window.addEventListener('resize', function() {
-                updateCarousel();
-                prevTranslate = -currentIndex * slides[0].offsetWidth;
-            });
-        });
-        
-        // 移动端菜单切换功能
-        document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.querySelector('.nav-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            
-            navToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-            });
-            
-            // 点击导航链接时关闭菜单
-            const navLinkItems = document.querySelectorAll('.nav-link');
-            navLinkItems.forEach(link => {
-                link.addEventListener('click', function() {
-                    navLinks.classList.remove('active');
-                });
-            });
-        });
-        
-        // 图片查看器功能
-        document.addEventListener('DOMContentLoaded', function() {
-            // 创建图片查看器元素
-            const imageViewer = document.createElement('div');
-            imageViewer.className = 'image-viewer';
-            imageViewer.innerHTML = `
-                <div class="image-viewer-content">
-                    <span class="image-viewer-close">&times;</span>
-                    <img src="" alt="">
-                </div>
-            `;
-            document.body.appendChild(imageViewer);
-            
-            const viewerImage = imageViewer.querySelector('img');
-            const closeButton = imageViewer.querySelector('.image-viewer-close');
-            
-            // 为所有卡片图片添加点击事件
-            const cardImages = document.querySelectorAll('.card-img');
-            cardImages.forEach(img => {
-                img.addEventListener('click', function() {
-                    const src = this.src;
-                    viewerImage.src = src;
-                    imageViewer.classList.add('active');
-                });
-            });
-            
-            // 关闭图片查看器
-            function closeViewer() {
-                imageViewer.classList.remove('active');
-            }
-            
-            closeButton.addEventListener('click', closeViewer);
-            
-            // 点击背景关闭
-            imageViewer.addEventListener('click', function(e) {
-                if (e.target === imageViewer) {
-                    closeViewer();
-                }
-            });
-            
-            // 按ESC键关闭
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && imageViewer.classList.contains('active')) {
-                    closeViewer();
-                }
-            });
-        });
     </script>
 </body>
 </html>

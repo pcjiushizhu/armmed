@@ -181,17 +181,19 @@
         }
         .ceo-photo {
             flex-shrink: 0;
-            width: 140px;
-            height: 185px;
-            border-radius: 0.5rem;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
             overflow: hidden;
             border: 3px solid var(--primary);
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            /* 背景渐变与照片蓝色背景保持一致，使留白区域无缝融合 */
+            background: linear-gradient(180deg, #4D69CD 0%, #597AE3 26%, #6485EE 52%, #6B8CF5 66%, #7496F8 80%, #7EA0FA 100%);
         }
         .ceo-photo img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
         .ceo-info {
             flex: 1;
@@ -226,7 +228,7 @@
             }
             .ceo-photo {
                 width: 120px;
-                height: 160px;
+                height: 120px;
             }
             .ceo-name {
                 font-size: 1.6rem;
